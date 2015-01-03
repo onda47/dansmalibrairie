@@ -19,7 +19,7 @@
 # Input Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
+"1	LINE	0
 	
 "2	LINE	0
 	
@@ -30,22 +30,28 @@
 	    prefix:   /
 "4	LINE	0
 	        <h2>les nouveautés</h2>
-"-	CHAR	0
+""-	CHAR	0
 	"
 
 # File marks:
-'0  3  14  ~/.gitignore
-'1  4  5  ~/.gitignore
-'2  4  0  ~/app/config/routing.yml
-'3  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
-'4  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
-'5  32  28  ~/app/AppKernel.php
-'6  5  0  ~/app/config/routing_dev.yml
-'7  14  94  ~/web/app_dev.php
-'8  104  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
-'9  1  16  ~/web/php.ini
+'0  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
+'1  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
+'2  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+'3  3  14  ~/.gitignore
+'4  4  5  ~/.gitignore
+'5  4  0  ~/app/config/routing.yml
+'6  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+'7  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
+'8  32  28  ~/app/AppKernel.php
+'9  5  0  ~/app/config/routing_dev.yml
 
 # Jumplist (newest first):
+-'  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
+-'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
+-'  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
+-'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
+-'  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+-'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
 -'  3  14  ~/.gitignore
 -'  1  0  ~/.gitignore
 -'  4  5  ~/.gitignore
@@ -53,7 +59,6 @@
 -'  6  0  ~/app/config/routing.yml
 -'  5  0  ~/app/config/routing.yml
 -'  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
--'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
 -'  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
 -'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
 -'  32  28  ~/app/AppKernel.php
@@ -140,12 +145,27 @@
 -'  1  0  ~/app/config/routing_dev.yml
 -'  14  94  ~/web/app_dev.php
 -'  1  0  ~/web/app_dev.php
--'  1  16  ~/web/php.ini
--'  1  16  ~/web/php.ini
--'  1  16  ~/web/php.ini
--'  1  16  ~/web/php.ini
 
 # History of marks within files (newest to oldest):
+
+> ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
+	"	6	20
+	.	6	20
+	+	6	20
+
+> ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
+	"	7	29
+	^	7	30
+	.	7	29
+	+	7	29
+
+> ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+	"	15	40
+	^	15	41
+	.	15	40
+	+	10	71
+	+	14	34
+	+	15	40
 
 > ~/.gitignore
 	"	3	14
@@ -165,12 +185,6 @@
 	+	1	0
 	+	1	0
 	+	4	0
-
-> ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
-	"	10	71
-	^	10	72
-	.	10	71
-	+	10	71
 
 > ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
 	"	113	0

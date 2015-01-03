@@ -4,6 +4,6 @@
     <enclosure url="http://dansmalibrairie.fr/{{ fichier.webChemin }}" length="{{ tailles[fichier.nomFichier] }}" type="{{ type }}/{{ fichier.extension }}" />
     <link>{{ route }}</link>
     <guid isPermaLink="true">{{ route }}</guid>
-    <pubDate>{{ date|date("rfc822") }}</pubDate>
+    <pubDate>{{ date|date("rss") }}</pubDate>
     <author>contact@dansmalibrairie.com ({{ auteur }})</author>
 </item>

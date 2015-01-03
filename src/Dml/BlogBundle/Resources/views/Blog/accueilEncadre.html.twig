@@ -3,7 +3,7 @@
 
 {% for var in vars %}
 	<article>
-		<div class="media" id="{{ id~loop.index0 }}">
+		<div class="media">
 			<a href="{{ route }}" title="{{ var.image.alt }}" class="pull-left">
 				<img src="{{ asset(var.image.webChemin) }}" alt="{{ var.image.alt }}" height="120" width="90">
 			</a>
