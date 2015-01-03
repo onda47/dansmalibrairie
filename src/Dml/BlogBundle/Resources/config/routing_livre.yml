@@ -1,0 +1,26 @@
+dmlblog_ajouter_livre:
+    pattern:   /{categorie}/ajouter.{format}
+    defaults:  { _controller: DmlBlogBundle:Livre:ajouter, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction
+        fonction: coup_de_coeur|nouveaute
+
+dmlblog_modifier_livre:
+    pattern:   /{categorie}/modifier/{livre}.{format}
+    defaults:  { _controller: DmlBlogBundle:Livre:modifier, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction
+        fonction: coup_de_coeur|nouveaute
+
+dmlblog_supprimer_livre:
+    pattern:   /{categorie}/supprimer/{livre}.{format}
+    defaults:  { _controller: DmlBlogBundle:Livre:supprimer, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction
+        fonction: coup_de_coeur|nouveaute
+
+dmlblog_modifier_supprimer_livre:
+    pattern:   /{categorie}/modifier-supprimer.{format}
+    defaults:  { _controller: DmlBlogBundle:Livre:modifierSupprimer, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction

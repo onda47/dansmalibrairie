@@ -1,0 +1,38 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Partenaire{% endblock %}
+
+{% block body %}
+	<h1 class="slapstick">Modifier partenaire</h1>
+	{{ form_errors(form) }}
+	<form method="post" action="{{ path('dmlblog_modifier_partenaire', {'partenaire': partenaire.id}) }}" {{ form_enctype(form) }} class="form-horizontal" role="form">
+		<fieldset>
+			<legend>Modification d'un partenaire</legend>
+			<div class="form-group">
+				{{ form_label(form.lien) }}
+				<div class="col-md-7">
+					{{ form_widget(form.lien) }}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.lienAfficher) }}
+				<div class="col-md-7">
+					{{ form_widget(form.lienAfficher) }}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.categoriePartenaire) }}
+				<div class="col-md-3">
+					{{ form_widget(form.categoriePartenaire) }}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<a href="{{ path('dmlblog_administration', {'categorie': 'partenaire'}) }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+					<button type="submit" class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+				</div>
+			</div>
+			{{ form_rest(form) }}
+		</fieldset>
+	</form>
+{% endblock %}

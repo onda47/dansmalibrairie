@@ -1,0 +1,24 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - {{categorie}}{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-md-8">
+		<p class="alert alert-warning">
+			<span class="glyphicon glyphicon-warning-sign"></span> Etes-vous bien certain de vouloir supprimer l'évènement "{{ evenement.titre }}"<br />
+			Ceci supprimera l'image associé s'il y en a une.
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<form method="post" action="{{ path('dmlblog_supprimer_evenement', {'evenement': evenement.id, 'categorie': categorie}) }}">
+			<a href="{{ path('dmlblog_administration', {'categorie': categorie}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+			<button type="submit" class="btn btn-danger">Supprimer <span class="glyphicon glyphicon-trash"></span></button>
+			{{ form_rest(form) }}
+		</form>
+	</div>
+</div>
+{% endblock %}

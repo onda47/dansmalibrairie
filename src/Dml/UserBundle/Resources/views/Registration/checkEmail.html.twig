@@ -1,0 +1,15 @@
+{% extends 'DmlUserBundle::layout.html.twig' %}
+
+{% block body %}
+{% block fos_user_content %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="alert alert-success">
+				<p>
+					Un e-mail de confirmation vous a été envoyé.
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock fos_user_content %}
+{% endblock %}

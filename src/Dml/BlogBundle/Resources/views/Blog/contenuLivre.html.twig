@@ -1,0 +1,41 @@
+<article>
+	<h2>
+		<a
+			href="{{ path('dmlblog_livre_unique', {'categorie': categorie, 'fonction': fonction, 'slug': livre.slug}) }}"
+			title="{{ livre.image.alt }}">
+			{{ livre.titre|upper }}
+		</a>
+		{% include '::like.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
+	</h2>
+    <div>
+		<div class="col-md-4">
+			<a
+				href="{{ path('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction}) }}"
+				title="{{ livre.image.alt }}">
+
+				<img
+					src="{{ asset('') ~ livre.image.webChemin }}"
+					alt="{{ livre.image.alt }}"
+					title="{{ livre.image.alt }}" />
+			</a>
+		</div>
+		<div class="media-body">
+			<h3>Auteur : </h3>
+			<p>{{ livre.auteurLivre }}</p>
+
+			<h3>Edition : </h3>
+			<p>{{ livre.edition }}</p>
+
+			<h3>Date de publication : </h3>
+			<p>{{ livre.datePublication|localizeddate('full', 'none') }}</p>
+
+			<h3>Critique : </h3>
+			<p>{{ livre.description|bbcode_filter('my_default_filter') }}</p>
+
+			<p class="text-right">
+				<small>Article écrit le {{ livre.datePublicationArticle|date('d/m/Y') }} par {{ livre.auteurArticle }}</small>
+			</p>
+				{% include '::share.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
+		</div>
+	</div>
+</article>

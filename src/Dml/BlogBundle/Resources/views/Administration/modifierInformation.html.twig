@@ -1,0 +1,56 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block title %}{{ parent() }} - Modifier information{% endblock %}
+
+{% block titre_admin %} - Information {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path('dmlblog_modifier_information', {'information': information.id}) }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+                <fieldset>
+                    <legend>Modifier la rubrique information</legend>
+                    {{ form_errors(form) }}
+                    <div class="form-group">
+                        {{ form_label(form.afficher) }}
+                        <div class="col-md-1 text-left">
+                            {{ form_widget(form.afficher) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.messageBouton) }}
+                        <div class="col-md-6">
+                            {{ form_widget(form.messageBouton) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.titre) }}
+                        <div class="col-md-6">
+                            {{ form_widget(form.titre) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.information) }}
+                        <div class="col-md-6">
+                            {{ form_widget(form.information) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.enPopup) }}
+                        <div class="col-md-1 text-left">
+                            {{ form_widget(form.enPopup) }}
+                        </div>
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a href="{{ path('dmlblog_administration', {'categorie': 'information'}) }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+                            <button class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

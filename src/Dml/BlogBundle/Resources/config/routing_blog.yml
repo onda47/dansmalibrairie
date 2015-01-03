@@ -1,0 +1,85 @@
+dmlblog_accueil:
+    pattern: /
+    defaults: { _controller: DmlBlogBundle:Blog:accueil, format: php }
+
+dmlblog_homepage:
+    pattern:  /accueil.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:accueil, format: php }
+
+dmlblog_librairie:
+    pattern: /la-librairie.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:librairie, format: php }
+
+dmlblog_librairie_article_presse:
+    pattern: /la-librairie/{titre}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:librairieArticlePresse, format: php }
+
+dmlblog_livre:
+    pattern: /{categorie}/{fonction}-{page}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:livre, page: 1, format: php }
+    requirements:
+        categorie: jeunesse|bd|science-fiction
+        fonction: coup-de-coeur|nouveaute
+        page: \d*
+
+dmlblog_livre_unique:
+    pattern: /{categorie}/{fonction}/{slug}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:livreUnique, format: php }
+    requirements:
+        categorie: jeunesse|bd|science-fiction
+        fonction: coup-de-coeur|nouveaute
+
+dmlblog_evenement:
+    pattern: /{categorie}/evenement-{page}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:evenement, page: 1, format: php }
+    requirements:
+        categorie: jeunesse|bd|science-fiction
+        page: \d*
+
+dmlblog_evenement_unique:
+    pattern: /{categorie}/evenement/{slug}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:evenementUnique, format: php }
+    requirements:
+        categorie: jeunesse|bd|science-fiction
+
+dmlblog_newsletter:
+    pattern:   /newsletter/{page}.{format}
+    defaults:  { _controller: DmlBlogBundle:Blog:newsletter, page: 1, format: php }
+
+dmlblog_emission:
+    pattern:   /radio-bulle.{format}
+    defaults:  { _controller: DmlBlogBundle:Blog:emission, format: php }
+
+dmlblog_emission_unique:
+    pattern: /radio-bulle/{slug}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:emissionUnique, format: php }
+
+dmlblog_espace_professionnel:
+    pattern: /espace-professionnel.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:espaceProfessionnel, format: php }
+
+dmlblog_contact:
+    pattern: /contact.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:contact, format: php }
+
+dmlblog_mentions_legales:
+    pattern: /mentions-legales.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:mentionsLegales, format: php }
+
+dmlblog_partenaires:
+    pattern: /partenaires.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:partenaires, format: php }
+
+dmlblog_produit_derive:
+    pattern: /produit-derive/{slug}.{format}
+    defaults: { _controller: DmlBlogBundle:Blog:produitDerive, format: php }
+
+dmlblog_gallerie:
+    path:      /gallerie/{page}.{format}
+    defaults:  { _controller: DmlBlogBundle:Blog:gallerie, page: 1, format: php }
+    requirements:
+        page: \d*
+
+dmlblog_administration:
+    resource: "@DmlBlogBundle/Resources/config/routing_admin.yml"
+    prefix:   /admin

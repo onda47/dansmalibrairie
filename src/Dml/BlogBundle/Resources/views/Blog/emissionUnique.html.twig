@@ -1,0 +1,50 @@
+{% extends 'DmlBlogBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ emission.titre }}{% endblock %}
+
+{% block meta %}
+	<meta property="og:title" 		content="{{ emission.titre }}" />
+	<meta property="og:url" 		content="{{ url('dmlblog_emission_unique', {'slug': emission.slug}) }}" />
+	<meta property="og:description" content="{{ emission.description|bbcode_clean|striptags }}" />
+	<meta property="og:type"        content="emission" />
+    <meta name="description" content="{{ emission.description|bbcode_clean|striptags }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel panel-primary">
+
+				<div class="panel-heading">
+					<h2 class="slapstick">
+						{{ emission.dateEmission|date('d/m/Y') }} - {{ emission.titre }}
+					</h2>
+				</div>
+
+				<div class="panel-body">
+					<p>
+						Personne emissioné : {{ emission.participant }}<br />
+					</p>
+					<object id="monFlash" type="application/x-shockwave-flash" data="{{ asset('bundles/blog/son/player_mp3_maxi.swf') }}" width="300" height="30">
+						<param name="wmode" value="transparent" />
+						<param name="movie" value="{{ asset('bundles/blog/son/player_mp3_maxi.swf') }}" />
+						<param name="FlashVars" value="mp3={{ asset('') ~ emission.fichierSon.webChemin }}&showvolume=1" />
+						<p>
+							Le lecteur audio ne fonctionne pas. Veuillez mettre votre navigateur internet à jour (firefox, google chrome ou internet explorer).<br />
+							Sinon télécharger le fichier en cliquant sur le titre.
+						</p>
+					</object>  <a href="{{ asset('') ~ emission.fichierSon.webChemin }}" title="Télécharger"><span class="glyphicon glyphicon-cloud-download"></span></a><br />
+					<p>
+						{{ emission.description|bbcode_filter('my_default_filter') }}
+					</p>
+				</div>
+
+				<div class="panel-footer">
+					<p>
+						Cette article a été publié par {{ emission.auteur }} le {{ emission.datePublication|date('d/m/Y') }}
+					</p>
+				</div>
+			</div>
+    	</div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Espace professionnel{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-md-8">
+		<p class="alert alert-warning">
+			<span class="glyphicon glyphicon-warning-sign"></span> Etes-vous bien certain de vouloir supprimer le document "{{ document.slug ~ '.' ~ document.extension }}"
+		</p>
+	</div>
+</div>
+<form method="post" action="{{ path('dmlblog_supprimer_document', {'document': document.id}) }}">
+	<a href="{{ path('dmlblog_administration', {'categorie': 'espace_professionnel'}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+	<button type="submit" class="btn btn-danger">Supprimer <span class="glyphicon glyphicon-trash"></span></button>
+	{{ form_rest(form) }}
+</form>
+{% endblock %}

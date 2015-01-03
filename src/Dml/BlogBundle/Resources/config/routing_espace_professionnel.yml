@@ -1,0 +1,15 @@
+dmlblog_ajouter_document:
+    pattern: /ajouter-document.{format}
+    defaults: { _controller: DmlBlogBundle:EspaceProfessionnel:ajouterDocument, format: php }
+
+dmlblog_modifier_supprimer_document:
+    pattern: /modifier-supprimer-document.{format}
+    defaults: { _controller: DmlBlogBundle:EspaceProfessionnel:modifierSupprimerDocument, format: php }
+
+dmlblog_modifier_document:
+    pattern: /modifier-document/{document}.{format}
+    defaults: { _controller: DmlBlogBundle:EspaceProfessionnel:modifierDocument, format: php }
+
+dmlblog_supprimer_document:
+    pattern: /supprimer-document/{document}.{format}
+    defaults: { _controller: DmlBlogBundle:EspaceProfessionnel:supprimerDocument, format: php }

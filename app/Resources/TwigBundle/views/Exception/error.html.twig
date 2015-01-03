@@ -1,0 +1,15 @@
+{% extends '::layout_error.html.twig' %}
+
+{% block title %}{{ parent() }} - Error{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<h1>Oops! Une erreur est survenue</h1>
+			<h2>Le serveur a retourné une erreur "{{ status_code }} {{ status_text	}}".</h2>
+			<p>
+				Quelque chose est cassé, veuillez nous envoyer un mail à l'adresse contact@dansmalibrairie.fr
+			</p>
+		</div>
+	</div>
+{% endblock %}

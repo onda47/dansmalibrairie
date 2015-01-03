@@ -1,0 +1,7 @@
+dmlblog_modifier_supprimer_utilisateur:
+    pattern:   /modifier-supprimer-utilisateur.{format}
+    defaults:  { _controller: DmlBlogBundle:Utilisateur:modifierSupprimer, format: php }
+
+dmlblog_modifier_utilisateur:
+    pattern: /modifier-utilisateur/{id}.{format}
+    defaults:  { _controller: DmlBlogBundle:Utilisateur:modifier, format: php }

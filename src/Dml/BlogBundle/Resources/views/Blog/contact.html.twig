@@ -1,0 +1,94 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - emplacement google map, adresse, numéro de téléphone, mail, tout est là{% endblock %}
+
+{% block meta %}
+	{{ parent() }}
+	{# Elément Google Maps indiquant que la carte doit être affiché en plein écran et qu'elle ne peut pas être redimensionnée par l'utilisateur #}
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta name="description" content="Rencontrez-nous, appelez-nous, envoyez-nous un mail, notre librairie est ouverte à tout le monde" />
+{% endblock %}
+
+{% block preload_javascripts %}
+	{# 
+		Inclusion de l'API Google MAPS 
+		Le paramètre "sensor" indique si cette application utilise détecteur pour déterminer la position de l'utilisateur
+	#}
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="{{ asset('bundles/blog/js/initialiser_google_map.js')}}"></script>
+{% endblock %}
+
+{% block onload %}onload="initialiser_google_map()"{% endblock %}
+{% block body %}
+	<section id="coordonnee">
+		<aside>
+			<h1>Contactez-nous</h1>
+			<blockquote>
+				<address>
+					<strong>Dans ma librairie</strong><br />
+					32, rue de garonne<br />
+					47000 Agen<br />
+					<abbr title="Phone">Tél :</abbr> 05 53 48 25 68<br />
+					Courriel: <a href="mailto:contact@dansmalibrairie.com" title="Envoyez un mail !">contact@dansmalibrairie.com</a>
+				</address>
+			</blockquote>
+			<h1>Nos horaires</h1>
+			<blockquote>
+				<p>
+					Lundi : de 15h à 19h<br />
+					Du mardi au samedi : de 10h30 à 12h30 et <br />
+					de 14h à 19h00
+				</p>
+			</blockquote>
+		</aside>
+		<aside>
+			<div id="carte_google_map"></div>
+		</aside>
+	</section>
+	<hr />
+	<section id="send_mail">
+		<aside>
+			<h1>Envoyez-nous un mail !</h1>
+			{{ form_errors(form) }}
+			<form method="post" action="{{ path('dmlblog_contact') }}" class="form-horizontal" role="form">
+				<div class="form-group">
+					{{ form_label(form.prenom) }}
+					<div class="col-md-5">
+						{{ form_widget(form.prenom) }}
+					</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.nom) }}
+					<div class="col-md-5">
+						{{ form_widget(form.nom) }}
+					</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.courriel) }}
+					<div class="col-md-5">
+						{{ form_widget(form.courriel) }}
+					</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.sujet) }}
+					<div class="col-md-5">
+						{{ form_widget(form.sujet) }}
+					</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.contenu) }}
+					<div class="col-md-5">
+						{{ form_widget(form.contenu) }}
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-5">
+						<button type="reset" value="Réinitialiser" class="btn btn-info pull-left"><span class="glyphicon glyphicon-refresh"></span> Réinitialiser</button>
+						<button class="btn btn-primary pull-right" type="submit" value="Envoyer"><span class="glyphicon glyphicon-envelope"></span> Envoyer</button>
+					</div>
+				</div>
+				{{ form_rest(form) }}
+			</form>
+		</aside>
+	</section>
+{% endblock %}

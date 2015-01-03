@@ -1,0 +1,13 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - {{categorie}}{% endblock %}
+
+{% block body %}
+	{% include 'DmlBlogBundle:Livre:formulaire.html.twig' with
+		{
+		'message': 'Modifier un livre',
+		'route': path('dmlblog_modifier_livre', {'livre': livre.id, 'categorie': categorie, 'fonction': fonction}),
+        'modifier': true
+		}
+	%}
+{% endblock %}

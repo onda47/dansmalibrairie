@@ -1,0 +1,68 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}
+	{{ parent() }}, retrouvez toute les photos diverses et variées ici !
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Dans ma librairie publient ici toutes les photos en relation avec les
+	différentes activités de la librairie !" />
+{% endblock %}
+
+{% block body %}
+<section>
+	{% if is_granted(('ROLE_ADMIN')) %}
+		<a href="{{ path('dmlblog_ajouter_gallerie') }}" class="btn btn-info">Ajouter une image</a>
+	{% endif %}
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<div id="carousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					{% for gallerie in galleries %}
+						<li data-target="#carousel" data-slide-to="{{ loop.index0 }}"{% if loop.first %} class="active"{% endif %}></li>
+					{% endfor %}
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+				{% for gallerie in galleries %}
+					<div class="item{% if loop.first %} active{% endif %}">
+						<img src="{{ asset(gallerie.image.webChemin) }}" alt="{{ gallerie.image.alt }}">
+						<div class="carousel-caption">
+							{{ gallerie.image.alt }}
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 text-center">
+				{# S'il y a plus d'une page, on affiche la liste des pages #}
+				{% if nb_page > 1 %}
+					<ul class="pagination">
+						<li><a href="{{ path('dmlblog_gallerie', {'page': 1}) }}">&laquo;</a></li>
+						{# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+						{% for p in range(1, nb_page) %}
+							<li{% if p == page %} class="active"{% endif %}>
+								<a href="{{ path('dmlblog_gallerie', {'page': p}) }}">{{ p }}</a>
+							</li>
+						{% endfor %}
+						<li><a href="{{ path('dmlblog_gallerie', {'page': nb_page}) }}">&raquo;</a></li>
+					</ul>
+			  {% endif %}
+		</div>
+	</div>
+</section>
+{% endblock %}

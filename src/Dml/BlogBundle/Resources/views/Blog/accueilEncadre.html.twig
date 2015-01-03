@@ -1,0 +1,20 @@
+
+<h2><a href="{{ route }}" title="{{ h2 }}">{{ h2|raw }}</a></h2>
+
+{% for var in vars %}
+	<article>
+		<div class="media" id="{{ id~loop.index0 }}">
+			<a href="{{ route }}" title="{{ var.image.alt }}" class="pull-left">
+				<img src="{{ asset(var.image.webChemin) }}" alt="{{ var.image.alt }}" height="120" width="90">
+			</a>
+			<div class="media-body">
+				<h3>
+					<a href="{{ route }}" title="{{ var.titre }}">
+						{{ var.titre|truncate(28, false, '...') }}
+					</a>
+				</h3>
+				<p>{{ var.description|truncate(235, false, '...') }}</p>
+			</div>
+		</div>
+	</article>
+{% endfor %}

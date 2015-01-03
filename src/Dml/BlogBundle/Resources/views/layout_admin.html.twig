@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block b %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Administration{% block titre_admin %} - Menu{% endblock %}</h1>
+        </div>
+    </div>
+    {% include 'DmlBlogBundle::barre.html.twig' %}
+    {% block body %}
+    {% endblock %}
+{% endblock %}

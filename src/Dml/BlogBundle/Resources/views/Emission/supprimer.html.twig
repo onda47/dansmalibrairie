@@ -1,0 +1,23 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Radio bulle{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-md-8">
+		<p class="alert alert-warning">
+			<span class="glyphicon glyphicon-warning-sign"></span> Etes-vous bien certain de vouloir supprimer l'émission "{{ emission.titre }}"<br />
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<form method="post" action="{{ path('dmlblog_supprimer_emission', {'emission': emission.id }) }}">
+			<a href="{{ path('dmlblog_administration', {'categorie': 'emission'}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+			<button type="submit" class="btn btn-danger">Supprimer <span class="glyphicon glyphicon-trash"></span></button>
+			{{ form_rest(form) }}
+		</form>
+	</div>
+</div>
+{% endblock %}

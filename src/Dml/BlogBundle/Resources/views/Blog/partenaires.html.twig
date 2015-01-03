@@ -1,0 +1,37 @@
+{% extends 'DmlBlogBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - liste des partenaires{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Tous les partenaires de la librairie." />
+{% endblock %}
+
+{% block body %}
+    <section id="partenaires">
+        <h1>NOS CONTACTS</h1>
+ 
+        <aside>
+            <h2>Nos réseaux</h2>
+            <a href="http://www.canalbd.net/" target="_blank">
+                <img src="{{ asset('bundles/blog/img/partenaire/canalbd.gif')}}" alt="logo de canal bd" />
+            </a>
+            <a href="http://www.librairiesatlantiques.com/" target="_blank">
+                <img src="{{ asset('bundles/blog/img/partenaire/librairie_atlantique.jpg')}}" alt="logo de librairie atlantique" height="95" />
+            </a>
+        </aside>
+
+        {% for donnee in donnees %}
+            {% if loop.index0 == 0 or donnee.nom != donnees[loop.index0 - 1].nom %}
+            <aside>
+                <h2>{{ donnee.nom }}</h2>
+                <ul>
+            {% endif %}
+
+                    <li><a href="{{ donnee.lien }}" target="_blank" class="lien_contact">{{ donnee.lienAfficher }}</a></li>
+            {% if loop.index0 + 1 > donnees|length - 1 or donnee.nom != donnees[loop.index0 + 1].nom %}
+                </ul>
+            </aside>
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endblock %}

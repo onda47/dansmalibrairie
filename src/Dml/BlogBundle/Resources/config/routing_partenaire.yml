@@ -1,0 +1,41 @@
+####################################
+# CATEGORIE PARTENAIRE
+####################################
+dmlblog_ajouter_categorie_partenaire:
+    pattern: /ajouter-categorie-partenaire.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:ajouterCategoriePartenaire, format: php }
+
+dmlblog_modifier_supprimer_categorie_partenaire:
+    pattern: /modifier-supprimer-categorie-partenaire.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:modifierSupprimerCategoriePartenaire, format: php }
+
+dmlblog_modifier_categorie_partenaire:
+    pattern: /modifier-categorie-partenaire/{categoriePartenaire}.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:modifierCategoriePartenaire, format: php }
+
+dmlblog_supprimer_categorie_partenaire:
+    pattern: /supprimer-categorie-partenaire/{categoriePartenaire}.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:supprimerCategoriePartenaire, format: php }
+
+####################################
+# PARTENAIRE
+####################################
+dmlblog_ajouter_partenaire:
+    pattern: /ajouter-partenaire.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:ajouterPartenaire, format: php }
+
+dmlblog_modifier_supprimer_partenaire:
+    pattern: /modifier-supprimer-partenaire.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:modifierSupprimerPartenaire, format: php }
+
+dmlblog_modifier_partenaire:
+    pattern: /modifier-partenaire/{partenaire}.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:modifierPartenaire, format: php }
+
+dmlblog_supprimer_partenaire:
+    pattern: /supprimer-partenaire/{partenaire}.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:supprimerPartenaire, format: php }
+
+dmlblog_definir_ordre:
+    pattern: /definir-ordre-categorie.{format}
+    defaults: { _controller: DmlBlogBundle:Partenaire:definirOrdre, format: php }

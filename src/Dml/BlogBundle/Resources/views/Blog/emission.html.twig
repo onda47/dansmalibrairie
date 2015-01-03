@@ -1,0 +1,86 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Les émissions effectué avec Radio Bulle sont en lecture ici.
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Nous faisons des émissions hebdomadaire avec radio bulle, écoutez-les et vous
+    aurez un avis d'expert sur les dernières sorties et les coups de coeur des libraires" />
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="text-center">Présentation de "radio bulle"</h2>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        En partenariat avec la radio agenaise Radio Bulle (93,6), Dans ma librairie
+                        anime une émission hebdomadaire "OOBY DOOBY". Cette émission est consacrée
+                        au monde de la BD et du Livre Jeunesse.
+                    <p/>
+                    <p>
+                        Michel, Violène et Grégory partagent avec vous leur passion, en évoquant les
+                        nouveautés, en vous faisant part de leurs "coup de cœur". Ils auront par
+                        ailleurs, le plaisir de recevoir des auteurs, de donner la parole à des
+                        lecteurs, bref d'aborder tous les sujets touchant à la BD et au livre
+                        Jeunesse.
+                    </p>
+                    <p>
+                        OOBY DOOBY est diffusée le lundi à 18h et rediffusée les mardis à 21h et
+                        mercredis à 21h.
+                    </p>
+                    <p>
+                        Retrouvez ci-après les derniers enregistrements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-center">NOS ÉMISSIONS</h1>
+
+    {% for emission in liste_emission %}
+    {% if loop.index % 2 == 1 or loop.index == 1 %}
+    <div class="row">
+    {% endif %}
+        <div class="col-md-6 emission">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h2>
+                        <a href="{{ path('dmlblog_emission_unique', {'slug': emission.slug}) }}" title="{{ emission.titre }}">
+                            {{ emission.titre }}<small> - {{ emission.dateEmission|date('d/m/Y') }}</small>
+                        </a>
+                    </h2>
+                </div>
+
+                <div class="panel-body">
+                    <p>Sujet : {{ emission.sujet }}</p>
+                    <p>Participants : {{ emission.participant }}</p>
+                    <object id="monFlash" type="application/x-shockwave-flash" data="{{ asset('bundles/blog/son/player_mp3_maxi.swf') }}" width="300" height="30">
+                        <param name="wmode" value="transparent" />
+                        <param name="movie" value="{{ asset('bundles/blog/son/player_mp3_maxi.swf') }}" />
+                        <param name="FlashVars" value="mp3={{ asset('') ~ emission.fichierSon.webChemin }}&showvolume=1" />
+                        <p>
+                            Le lecteur audio ne fonctionne pas. Veuillez mettre votre navigateur internet à jour (firefox, google chrome ou internet explorer).<br />
+                            Sinon télécharger le fichier en cliquant sur le titre.
+                        </p>
+                    </object>  <a href="{{ asset('') ~ emission.fichierSon.webChemin }}" title="Télécharger"><span class="glyphicon glyphicon-cloud-download"></span></a><br />
+                    <p>
+                        {{ emission.description|bbcode_filter('my_default_filter') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    {% if loop.index % 2 == 0 or loop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+{% endblock body %}

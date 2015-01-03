@@ -1,0 +1,26 @@
+{% extends 'DmlBlogBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ evenement.titre }}{% endblock %}
+
+{% block meta %}
+    <meta property="og:title"       content="{{ evenement.titre }}" />
+    <meta property="og:url"         content="{{ url('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug}) }}" />
+    <meta property="og:description" content="{{ evenement.description|bbcode_clean|striptags }}" />
+    <meta property="og:image"       content="http://dansmalibrairie.fr{{ asset('') ~ evenement.image.webChemin }}" />
+    <meta property="og:type"        content="article" />
+    <meta name="description"        content="{{ evenement.description|bbcode_clean|striptags }}" />
+{% endblock %}
+
+{% block body %}
+    <section class="articles evenement {{ categorie }}">
+        <h1><span>EVENEMENTS {{ categorie|upper }}</span></h1>
+        {% include 'DmlBlogBundle:Blog:contenuEvenement.html.twig' %}
+    </section>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-1">
+            <a href="{{ path('dmlblog_evenement', {'categorie': categorie}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+        </div>
+    </div>
+{% endblock %}

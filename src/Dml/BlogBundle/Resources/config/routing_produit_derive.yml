@@ -1,0 +1,57 @@
+############################
+# CATEGORIE DE PRODUIT
+############################
+dmlblog_ajouter_categorie:
+    pattern:   /ajouter-categorie-produit.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:ajouterCategorie, format: php }
+
+dmlblog_modifier_supprimer_categorie_produit:
+    pattern:   /modifier-supprimer-categorie.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:modifierSupprimerCategorie, format: php }
+
+dmlblog_supprimer_categorie_produit:
+    pattern:   /supprimer-categorie/{categorieProduit}.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:supprimerCategorieProduitDerive, format: php }
+
+dmlblog_modifier_categorie_produit:
+    pattern:   /modifier-categorie/{categorieProduit}.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:modifierCategorieProduitDerive, format: php }
+
+############################
+# SOUS CATEGORIE DE PRODUIT
+############################
+dmlblog_ajouter_sous_categorie:
+    pattern:   /ajouter-sous-categorie.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:ajouterSousCategorie, format: php }
+
+dmlblog_modifier_supprimer_sous_categorie_produit:
+    pattern:   /modifier-supprimer-sous-categorie.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:modifierSupprimerSousCategorie, format: php }
+
+dmlblog_modifier_sous_categorie_produit:
+    pattern:   /modifier-sous-categorie/{sousCategorieProduit}.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:modifierSousCategorieProduitDerive, format: php }
+
+dmlblog_supprimer_sous_categorie_produit:
+    pattern:   /supprimer-sous-categorie/{sousCategorieProduit}.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:supprimerSousCategorieProduitDerive, format: php }
+
+############################
+# PRODUIT
+############################
+
+dmlblog_ajouter_produit:
+    pattern:   /ajouter-produit.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:ajouterProduit, format: php }
+
+dmlblog_modifier_supprimer_produit:
+    pattern:   /modifier-supprimer-produit.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:modifierSupprimerProduit, format: php }
+
+dmlblog_modifier_produit:
+    pattern:   /modifier-produit/{produit}.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:modifierProduit, format: php }
+
+dmlblog_supprimer_produit:
+    pattern:   /supprimer-produit/{produit}.{format}
+    defaults:  { _controller: DmlBlogBundle:ProduitDerive:supprimerProduit, format: php }

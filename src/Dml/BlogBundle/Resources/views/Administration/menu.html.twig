@@ -1,0 +1,169 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block title %}{{ parent() }} - Administration{% endblock %}
+
+{% block barre %}
+	{% include 'DmlBlogBundle:Administration:barre.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+	<div class="tab-content">
+
+		<div class="tab-pane fade{% if categorie == 'jeunesse' %} in active{% endif %}" id="jeunesse">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="slapstick text-center">Jeunesse</h2>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les nouveautés</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_livre', {'categorie': 'jeunesse', 'fonction': 'nouveaute'}) }}">Ajouter une nouveauté</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_livre', {'categorie': 'jeunesse', 'fonction': 'nouveaute'}) }}">Modifier ou supprimer une nouveauté</a>
+					</div>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les coups de coeur</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_livre', {'categorie': 'jeunesse', 'fonction': 'coup-de-coeur'}) }}">Ajouter un coup de coeur</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_livre', {'categorie': 'jeunesse', 'fonction': 'coup-de-coeur'}) }}">Modifier ou supprimer un coup de coeur</a>
+					</div>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les évènements</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_evenement', {'categorie': 'jeunesse'}) }}">Ajouter un évènement</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_evenement', {'categorie': 'jeunesse'}) }}">Modifier ou supprimer un évènement</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'bd' %} in active{% endif %}" id="bd">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="slapstick text-center">BD</h2>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les nouveautés</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_livre', {'categorie': 'bd', 'fonction': 'nouveaute'}) }}">Ajouter une nouveauté</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_livre', {'categorie': 'bd', 'fonction': 'nouveaute'}) }}">Modifier ou supprimer une nouveauté</a>
+					</div>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les coups de coeur</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_livre', {'categorie': 'bd', 'fonction': 'coup-de-coeur'}) }}">Ajouter un coup de coeur</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_livre', {'categorie': 'bd', 'fonction': 'coup-de-coeur'}) }}">Modifier ou supprimer un coup de coeur</a>
+					</div>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les évènements</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_evenement', {'categorie': 'bd'}) }}">Ajouter un évènement</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_evenement', {'categorie': 'bd'}) }}">Modifier ou supprimer un évènement</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'science-fiction' %} in active{% endif %}" id="science-fiction">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="slapstick text-center">Science fiction</h2>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les nouveautés</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_livre', {'categorie': 'science-fiction', 'fonction': 'nouveaute'}) }}">Ajouter une nouveauté</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_livre', {'categorie': 'science-fiction', 'fonction': 'nouveaute'}) }}">Modifier ou supprimer une nouveauté</a>
+					</div>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les coups de coeur</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_livre', {'categorie': 'science-fiction', 'fonction': 'coup-de-coeur'}) }}">Ajouter un coup de coeur</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_livre', {'categorie': 'science-fiction', 'fonction': 'coup-de-coeur'}) }}">Modifier ou supprimer un coup de coeur</a>
+					</div>
+					<div class="col-md-4">
+						<h3 class="slapstick">Les évènements</h3>
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_evenement', {'categorie': 'science-fiction'}) }}">Ajouter un évènement</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_evenement', {'categorie': 'science-fiction'}) }}">Modifier ou supprimer un évènement</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'newsletter' %} in active{% endif %}" id="newsletter">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="slapstick text-center">News letter</h2>
+					<div class="col-md-12">
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_newsletter') }}">Ajouter une newsletter</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_newsletter') }}">Modifier ou supprimer une newsletter</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'produits_derives' %} in active{% endif %}" id="produits_derives">
+			<div class="row">
+				<div class="col-md-4">
+					<h3 class="slapstick">catégories de produits dérivés</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_categorie') }}">Ajouter une catégorie de produit</a>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_categorie_produit') }}">Modifier ou supprimer une catégorie de produit</a>
+				</div>
+				<div class="col-md-4">
+					<h3 class="slapstick">sous catégories de produits dérivés</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_sous_categorie') }}">Ajouter une sous catégorie de produit</a>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_sous_categorie_produit') }}">Modifier ou supprimer une sous catégorie de produit</a>
+				</div>
+				<div class="col-md-4">
+					<h3 class="slapstick">produits dérivés</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_produit') }}">Ajouter un produit</a>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_produit') }}">Modifier ou supprimer un produit</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'emission' %} in active{% endif %}" id="emission">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="slapstick text-center">Émission</h2>
+					<div class="col-md-12">
+						<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_emission') }}">Ajouter une émission</a>
+						<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_emission') }}">Modifier ou supprimer une émission</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'espace_professionnel' %} in active{% endif %}" id="espace_professionnel">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="slapstick">Les documents</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_document') }}">Ajouter un document</a>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_document') }}">Modifier ou supprimer un document</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'partenaire' %} in active{% endif %}" id="partenaire">
+			<div class="row">
+				<div class="col-md-6">
+					<h3 class="slapstick">Les catégories de partenaire</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_categorie_partenaire') }}">Ajouter une catégorie de partenaire</a>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_categorie_partenaire') }}">Modifier ou supprimer les catégorie de partenaire</a>
+				</div>
+				<div class="col-md-6">
+					<h3 class="slapstick">Les partenaires</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_ajouter_partenaire') }}">Ajouter un Partenaire</a>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_partenaire') }}">Modifier ou supprimer les partenaires</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'utilisateur' %} in active{% endif %}" id="utilisateur">
+			<div class="row">
+				<div class="col-md-6">
+					<h3 class="slapstick">Les utilisateurs</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_supprimer_utilisateur') }}">Modifier ou supprimer un utilisateur</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade{% if categorie == 'information' %} in active{% endif %}" id="information">
+			<div class="row">
+				<div class="col-md-6">
+					<h3 class="slapstick">Rubrique information</h3>
+					<a class="btn btn-primary" href="{{ path('dmlblog_modifier_information', {'information': 1}) }}">Modifier</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

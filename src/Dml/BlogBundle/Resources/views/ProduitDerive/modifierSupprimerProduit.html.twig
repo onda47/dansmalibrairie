@@ -1,0 +1,29 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Produit dérivés{% endblock %}
+
+{% block body %}
+	<h1 class="slapstick">Liste des produits</h1>
+	{% for sous_categorie in liste_sous_categorie %}
+	<div class="row">
+		<div class="col-md-12">
+
+		    <h2 class="slapstick text-center">
+		    	{{ sous_categorie.nom ~ ' (' ~ sous_categorie.categorieProduit.nom ~ ')'}}
+		    </h2>
+
+		    {% for produit in sous_categorie.produits %}
+
+		    	<div class="col-md-3">
+			        <img height="250" width="250" src="{{ asset('') ~ produit.image.webChemin }}" title="{{ produit.image.alt }}"><br />
+
+			        <a class="pull-left" href="{{ path('dmlblog_modifier_produit', {'produit': produit.id}) }}"><span class="glyphicon glyphicon-wrench"></span></a>
+			        <a class="pull-right" href="{{ path('dmlblog_supprimer_produit', {'produit': produit.id}) }}"><span class="glyphicon glyphicon-trash"></span></a>
+			    </div>
+		    {% endfor %}
+
+		</div>
+	</div>
+	{% endfor %}
+	<a href="{{ path('dmlblog_administration', {'categorie': 'produits_derives'}) }}" class="pull-right btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block title %}{{ parent() }} - Modifier une newsletter{% endblock %}
+
+{% block titre_admin %} - Newsletter{% endblock %}
+
+{% block body %}
+    {% include 'DmlBlogBundle:Newsletter:formulaire.html.twig' with
+		{
+		'message': 'Modifier une newsletter',
+		'route': path('dmlblog_modifier_newsletter', {'newsletter': newsletter.id}),
+		}
+	%}
+{% endblock %}

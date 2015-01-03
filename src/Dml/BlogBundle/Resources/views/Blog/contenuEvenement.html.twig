@@ -1,0 +1,26 @@
+<article>
+    <h2>
+        <a href="{{ path('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug}) }}">
+            {{ evenement.titre|upper }}
+        </a>
+        {% include '::like.html.twig' with { 'url': url('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug}) } %}
+    </h2>
+    <div>
+        <div class="col-md-4">
+            <a href="{{ path('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug}) }}">
+                <img src="{{ asset('') ~ evenement.image.webChemin }}" alt="{{ evenement.image.alt }}" title="{{ evenement.image.alt }}">
+            </a>
+        </div>
+
+        <div class="media-body">
+            <h3>
+                Du {{ evenement.dateDebut|localizeddate('short', 'none') }} à {{ evenement.dateDebut|localizeddate('none', 'short') }} au {{ evenement.dateFin|localizeddate('short', 'none') }} à {{ evenement.dateFin|localizeddate('none', 'short') }}
+            </h3>
+            <p>{{ evenement.description|bbcode_filter('my_default_filter') }}</p>
+        </div>
+        <p class="text-right">
+            Cette article a été publié le {{ evenement.datePublication|date('d/m/Y') }} par {{ evenement.auteur }}
+            {% include '::share.html.twig' with {'url': url('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug})} %}
+        </p>
+    </div>
+</article>

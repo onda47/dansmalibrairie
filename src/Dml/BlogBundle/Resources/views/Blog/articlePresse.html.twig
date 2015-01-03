@@ -1,0 +1,9 @@
+<article>
+	<h2>{{ titre }}</h2>
+	<p>
+		{# <a href="{{ route }}" title="{{ titre }}" class="thumbnail"> #}
+		<img src="{{ asset('bundles/blog/img/article_presse/'~photo) }}" alt="{{ titre }}" />
+		{# </a> #}
+		<a href="{{ lien_direct }}" title="{{ titre }}" target="_blank">Lien vers le site "{{ journal }}"</a>
+	</p>
+</article>

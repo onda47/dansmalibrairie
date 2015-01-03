@@ -1,0 +1,32 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Produit dérivés{% endblock %}
+
+{% block body %}
+	<h1 class="slapstick">Liste des sous catégories de produits</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<td>N°</td>
+						<td>Nom</td>
+						<td>Modifier</td>
+						<td>Supprimer</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for sousCategorieProduit in liste_sous_categorie_produit %}
+						<tr>
+							<td>{{ loop.index }}</td>
+							<td>{{ sousCategorieProduit.nom }} ({{ sousCategorieProduit.categorieProduit.nom }})</td>
+							<td class="text-center"><a href="{{ path('dmlblog_modifier_sous_categorie_produit', { 'sousCategorieProduit': sousCategorieProduit.id }) }}" title='Modifier "{{ sousCategorieProduit.nom }}"'><span class="glyphicon glyphicon-wrench"></span></a></td>
+							<td class="text-center"><a href="{{ path('dmlblog_supprimer_sous_categorie_produit', { 'sousCategorieProduit': sousCategorieProduit.id }) }}" title='Supprimer "{{ sousCategorieProduit.nom }}"'><span class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<a href="{{ path('dmlblog_administration', {'categorie': 'produits_derives'}) }}" class="pull-right btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+		</div>
+	</div>
+{% endblock %}

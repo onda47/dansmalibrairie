@@ -1,0 +1,75 @@
+{{ form_errors(form) }}
+<form action="{{ route }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+<fieldset>
+    <legend>{{ message }}</legend>
+
+    <div class="form-group">
+        {{ form_label(form.titre) }}
+        <div class="col-md-5">
+            {{ form_widget(form.titre) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.participant) }}
+        <div class="col-md-5">
+            {{ form_widget(form.participant) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.sujet) }}
+        <div class="col-md-5">
+            {{ form_widget(form.sujet) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.dateEmission) }}
+        <div class="col-md-5">
+            {{ form_widget(form.dateEmission) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.description) }}
+        <div class="col-md-5">
+            {{ form_widget(form.description) }}
+        </div>
+    </div>
+    </fieldset>
+    {% if modifier %}
+        <div class="col-md-offset-2">
+            <a
+                class="btn btn-info"
+                href="{{ path('dmlblog_modifier_fichier_son', {'fichierSon': emission.fichierSon.id}) }}">
+                Modifier le fichier
+            </a>
+        </div>
+        <br />
+    {% else %}
+    <fieldset>
+        <legend>Ajout du fichier</legend>
+        <div class="form-group">
+            {{ form_label(form.fichierSon.nom) }}
+            <div class="col-md-3">
+                {{ form_widget(form.fichierSon.nom) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.fichierSon.fichier) }}
+            <div class="col-md-10">
+                {{ form_widget(form.fichierSon.fichier) }}
+            </div>
+        </div>
+    </fieldset>
+    {% endif %}
+    {{ form_rest(form) }}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a
+                class="btn btn-info"
+                href="{{ path('dmlblog_administration', {'categorie': 'emission'}) }}">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Retour
+            </a>
+
+            <button type="submit" class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+        </div>
+    </div>
+</form>

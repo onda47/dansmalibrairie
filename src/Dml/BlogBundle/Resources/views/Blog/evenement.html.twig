@@ -1,0 +1,39 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Les événements auxquels participent la librairie, c'est ici{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Vous verrez ici tout les évènements auxquels participent la librairie,
+    les salons, le club de lecture, dédicace des auteurs..." />
+{% endblock %}
+
+{% block body %}
+	<section class="articles evenement {{ categorie }}">
+		<h1><span>EVENEMENTS {{ categorie|upper }}</span></h1>
+
+		{% for evenement in liste_evenement %}
+			{% include 'DmlBlogBundle:Blog:contenuEvenement.html.twig' %}
+			<br />
+			<br />
+		{% endfor %}
+	<section>
+	{# S'il y a plus d'une page, on affiche la liste des pages #}
+	{% if nb_page > 1 %}
+	<div class="row">
+		<div class="col-md-12">
+			<div class="text-center">
+				<ul class="pagination">
+					<li><a href="{{ path('dmlblog_evenement', {'categorie': categorie, 'page': 1}) }}">&laquo;</a></li>
+					{# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+					{% for p in range(1, nb_page) %}
+						<li {% if p == page %}class="active"{% endif %}>
+							<a href="{{ path('dmlblog_evenement', {'categorie': categorie, 'page': p}) }}">{{ p }}</a>
+						</li>
+					{% endfor %}
+					<li><a href="{{ path('dmlblog_evenement', {'categorie': categorie, 'page': nb_page}) }}">&raquo;</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% endblock %}

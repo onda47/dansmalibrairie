@@ -1,0 +1,63 @@
+{% extends "DmlBlogBundle::layout_admin.html.twig" %}
+
+{% block titre_admin %} - Utilisateur {% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="slapstick">Liste des utilisateurs</h1>
+			<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th class="text-center">Nom d'utilisateur</th>
+							<th class="text-center">Droit</th>
+							<th class="text-center">Dernière connexion</th>
+							<th class="text-center">Modifier</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for utilisateur in liste_utilisateur %}
+							<tr>
+								<td>{{ utilisateur.username }}</td>
+								<td>
+									{% for role in utilisateur.roles %}
+									    {{ role }}
+									    {% if not loop.last %}| {% endif %}
+									{% endfor %}
+								</td>
+								<td>{{ utilisateur.lastLogin|localizeddate('medium') }}</td>
+								<td class="text-center">
+									<a
+										href="{{ path('dmlblog_modifier_utilisateur', { 'id': utilisateur.id }) }}"
+										title='Modifier "{{ utilisateur.username }}"'>
+											<span class="glyphicon glyphicon-wrench"></span>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+			</table>
+			<a
+				href="{{ path('dmlblog_administration', {'categorie': 'utilisateur'}) }}"
+				title="Retour"
+				class="pull-right btn btn-default">
+				<span class="glyphicon glyphicon-arrow-left"></span> Retour
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="alert alert-info">
+				<p>
+					Aide :
+					<ul>
+						<li>ROLE_USER : rôle donné par défaut aux utilisateurs enregistrés</li>
+						<li>ROLE_PROFESSIONNEL : rôle permettant l'accès à l'espace professionnel</li>
+						<li>ROLE_ADMIN : rôle permettant l'accès à l'espace d'administration</li>
+						<li>ROLE_SUPER_ADMIN : rôle équivalent à ROLE_ADMIN</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

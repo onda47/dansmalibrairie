@@ -1,0 +1,16 @@
+{% extends 'DmlUserBundle::layout.html.twig' %}
+
+{% block body %}
+{% block fos_user_content %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="alert alert-success">
+				<p>
+					Votre enregistrement a bien été confirmé.<br />
+					Veuillez à présent contacter la librairie afin d'accéder à l'espace professionnel.
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock fos_user_content %}
+{% endblock %}

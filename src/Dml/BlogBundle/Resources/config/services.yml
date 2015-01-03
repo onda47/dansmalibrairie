@@ -1,0 +1,11 @@
+parameters:
+#    dml_blog.example.class: Dml\BlogBundle\Example
+
+services:
+    dml_blog.feed:
+        class: Dml\BlogBundle\Feed\DmlFeed
+        arguments: [@doctrine.orm.entity_manager, @templating]
+        # beta_listener:
+        #     class: Dml\BlogBundle\Beta\BetaListener
+        #     tags:
+        #         - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }

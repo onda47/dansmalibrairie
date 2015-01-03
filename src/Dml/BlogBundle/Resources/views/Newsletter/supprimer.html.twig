@@ -1,0 +1,26 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block title %}{{ parent() }} - Supprimer une newsletter{% endblock %}
+
+{% block titre_admin %} - Newsletter{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-md-8">
+		<p class="alert alert-warning">
+			<span class="glyphicon glyphicon-warning-sign"></span>
+			Etes-vous bien certain de vouloir supprimer la newsletter "{{ newsletter.datePublication|date('d/m/Y') }}" ?<br />
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<form method="post" action="{{ path('dmlblog_supprimer_newsletter', {'newsletter': newsletter.id, 'categorie': 'newsletter'}) }}">
+			<a href="{{ path('dmlblog_administration', {'categorie': 'newsletter'}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+			<button type="submit" class="btn btn-danger">Supprimer <span class="glyphicon glyphicon-trash"></span></button>
+			{{ form_rest(form) }}
+		</form>
+	</div>
+</div>
+{% endblock %}

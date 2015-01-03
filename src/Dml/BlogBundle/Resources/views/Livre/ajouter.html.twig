@@ -1,0 +1,13 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - {{ categorie }}{% endblock %}
+
+{% block body %}
+	{% include 'DmlBlogBundle:Livre:formulaire.html.twig' with
+		{
+		'message': 'Ajouter un livre',
+		'route': path('dmlblog_ajouter_livre', {'categorie': categorie, 'fonction': fonction}),
+        'modifier': false
+		}
+	%}
+{% endblock %}

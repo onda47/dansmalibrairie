@@ -1,0 +1,38 @@
+{% if information is not null %}
+    {% if information.enPopup == true %}
+        <div class="text-center">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg text-center" data-toggle="modal" data-target="#myModal">
+                {{ information.messageBouton }}
+            </button>
+            <!-- Modal -->
+            <div class="modal fade text-left" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">{{ information.titre }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            {{ information.information|bbcode_filter('my_default_filter') }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <section>
+                    <div class="well">
+                    <h1 class="text-center">{{ information.titre }}</h1>
+                        <p>{{ information.information|bbcode_filter('my_default_filter') }}</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}

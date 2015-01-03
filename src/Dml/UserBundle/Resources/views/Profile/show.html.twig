@@ -1,0 +1,35 @@
+{% extends 'DmlUserBundle::layout.html.twig' %}
+
+{% block body %}
+{% block fos_user_content %}
+	<div class="row">
+		<div class="col-md-6">
+			<h1 class="slapstick text-center">Vos informations</h1>
+			<div class="alert alert-success">
+				<p>
+					Nom d'utilisateur : {{ user.username }}
+				</p>
+			</div>
+			<div class="alert alert-success">
+				<p>
+					Adresse e-mail : {{ user.email }}
+				</p>
+			</div>
+			<div class="alert alert-info">
+				<p>
+					Si vous voulez supprimer votre compte, veuillez nous contacter directement par mail ou par téléphone.
+				</p>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h1 class="slapstick text-center">Actions</h1>
+			<div class="col-md-3">
+				<a href="{{ path('fos_user_profile_edit') }}" title="Modifier mes informations" class="btn btn-primary">Editer mon profil</a>
+			</div>
+			<div class="col-md-3">
+				<a href="{{ path('fos_user_change_password') }}" title="Modifier mon mot de passe" class="btn btn-primary">Modifier mon mot de passe</a>
+			</div>
+		</div>
+	</div>
+{% endblock fos_user_content %}
+{% endblock body %}

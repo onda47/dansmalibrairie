@@ -1,0 +1,13 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Radio bulle{% endblock %}
+
+{% block body %}
+	{% include 'DmlBlogBundle:Emission:formulaire.html.twig' with
+		{
+		'message': "Ajout d'une émission",
+		'route': path('dmlblog_ajouter_emission'),
+        'modifier': false
+		}
+	%}
+{% endblock %}

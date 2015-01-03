@@ -1,0 +1,43 @@
+{% extends 'DmlBlogBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Liste des produits dérivés Jeunesse, BD et mangas{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Les tasses, les figurines, les jouets, tout les produits dérivés vendus par la librairie
+    des livres jeunesse, mangas et BD sont publiés ici" />
+{% endblock %}
+
+{% block body %}
+    <h1>{{ categorieProduit }}</h1>
+
+    {% for sous_categorie in liste_sous_categorie %}
+    <section class="categorie_produit">
+        <h2>{{ sous_categorie.nom }}</h2>
+        {% for produit in sous_categorie.produits %}
+            {% if loop.index % 3 == 1 or loop.index == 1 %}
+            <div>
+            {% endif %}
+
+                <article>
+            		<figure>
+                        <img
+                            src="{{ asset('') ~ produit.image.webChemin }}"
+                            alt="{{ produit.image.alt }}"
+                            title="{{ produit.image.alt }}" />
+                        <figcation>
+                            {% if produit.messageFlash is not null %}
+                            <p class="message_flash">{{ produit.messageFlash|bbcode_filter('my_default_filter') }}</p>
+                            {% endif %}
+                            <p class="prix">{{ produit.prix }} <span>€</span></p>
+                            <p class="statut">{{ produit.statut }}</p>
+                        </figcation>
+                    </figure>
+                </article>
+
+            {% if loop.index % 3 == 0 or loop.last %}
+            </div>
+            {% endif %}
+    	{% endfor %}
+    </section>
+    {% endfor %}
+{% endblock %}

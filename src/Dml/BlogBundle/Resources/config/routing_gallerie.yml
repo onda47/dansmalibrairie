@@ -1,0 +1,11 @@
+dmlblog_ajouter_gallerie:
+    pattern:   /ajouter-gallerie.{format}
+    defaults:  { _controller: DmlBlogBundle:Gallerie:ajouter, format: php }
+
+dmlblog_modifier_gallerie:
+    pattern:   /modifier-gallerie/{gallerie}.{format}
+    defaults:  { _controller: DmlBlogBundle:Gallerie:modifier, format: php }
+
+dmlblog_supprimer_gallerie:
+    pattern:   /supprimer-gallerie/{gallerie}.{format}
+    defaults:  { _controller: DmlBlogBundle:Gallerie:supprimer, format: php }

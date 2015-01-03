@@ -1,0 +1,27 @@
+{% extends 'DmlBlogBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ livre.titre }}{% endblock %}
+
+{% block meta %}
+	<meta property="og:title" 		content="{{ livre.titre }}" />
+	<meta property="og:url" 		content="{{ url('dmlblog_livre_unique', {'categorie': categorie, 'fonction': fonction, 'slug': livre.slug}) }}" />
+	<meta property="og:description" content="{{ livre.description|bbcode_clean|striptags }}" />
+	<meta property="og:image" 		content="http://dansmalibrairie.fr{{ asset('') ~ livre.image.webChemin }}" />
+	<meta property="og:type"        content="article" />
+	<meta name="description" 		content="{{ livre.description|bbcode_clean|striptags }}" />
+{% endblock %}
+
+{% block body %}
+	<section class="articles {{ categorie }}">
+		<h1>
+			<span>! {% if fonction == 'nouveaute' %}NOUVEAUTÉS {% else %}COUPS DE COEUR {% endif %}{{ categorie|upper}} !</span>
+		</h1><br />
+		{% include 'DmlBlogBundle:Blog:contenuLivre.html.twig' %}
+	</section>
+	<br />
+	<div class="row">
+		<div class="col-md-1">
+			<a href="{{ path('dmlblog_livre', {'categorie': categorie, 'fonction': fonction}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{{ form_errors(form) }}
+
+<form action="{{ route }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+
+    <fieldset>
+        <legend>{{ message }}</legend>
+
+        <div class="form-group">
+            {{ form_label(form.titre) }}
+            <div class="col-md-5">
+                {{ form_widget(form.titre) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.auteurLivre) }}
+            <div class="col-md-5">
+                {{ form_widget(form.auteurLivre) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.edition) }}
+            <div class="col-md-5">
+                {{ form_widget(form.edition) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.datePublication) }}
+            <div class="col-md-5">
+                {{ form_widget(form.datePublication) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.description) }}
+            <div class="col-md-5">
+                {{ form_widget(form.description) }}
+            </div>
+        </div>
+    </fieldset>
+    {% if modifier %}
+        <div class="col-md-offset-2">
+            <a href="{{ path('dmlblog_modifier_image', {'image': livre.image.id}) }}" class="btn btn-info">
+                Modifier l'image
+            </a>
+        </div>
+        <br />
+    {% else %}
+    <fieldset>
+        <legend>Ajout d'une image associée</legend>
+        <div class="form-group">
+            {{ form_label(form.image.alt) }}
+            <div class="col-md-3">
+                {{ form_widget(form.image.alt) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.image.file) }}
+            <div class="col-md-10">
+                {{ form_widget(form.image.file) }}
+            </div>
+        </div>
+    </fieldset>
+    {% endif %}
+    {{ form_rest(form) }}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a
+                class="btn btn-info"
+                href="{{ path('dmlblog_administration', {'categorie': categorie}) }}">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Retour
+            </a>
+
+            <button type="submit" class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+        </div>
+    </div>
+</form>

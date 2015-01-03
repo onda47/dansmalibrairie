@@ -1,0 +1,50 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Partenaire{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="slapstick">Liste des partenaires</h1>
+			{% for categorie_partenaire in liste_categorie_partenaire %}
+				<div class="row">
+					<div class="col-md-7">
+						<h2 class="slapstick">{{ categorie_partenaire.nom }}</h2>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<td class="text-center">Lien</td>
+									<td class="text-center">Modifier</td>
+									<td class="text-center">Supprimer</td>
+								</tr>
+							</thead>
+							<tbody>
+							{% for partenaire in categorie_partenaire.partenaires %}
+								<tr>
+									<td>{{ partenaire.lienAfficher }}</td>
+									<td class="text-center">
+										<a href="{{ path('dmlblog_modifier_partenaire', {'partenaire': partenaire.id}) }}" title='Modifier "{{ partenaire.lienAfficher }}"'>
+											<span class="glyphicon glyphicon-wrench"></span>
+										</a>
+									</td>
+									<td class="text-center">
+										<a href="{{	path('dmlblog_supprimer_partenaire', {'partenaire': partenaire.id}) }}" title='Supprimer "{{ partenaire.lienAfficher }}"'>
+											<span class="glyphicon glyphicon-trash"></span>
+										</a>
+									</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<a
+					href="{{ path('dmlblog_administration', {'categorie': 'partenaire'}) }}"
+					title="Retour"
+					class="pull-right btn btn-default">
+					<span class="glyphicon glyphicon-arrow-left"></span> Retour
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock body %}

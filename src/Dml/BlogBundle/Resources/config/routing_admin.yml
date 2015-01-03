@@ -1,0 +1,53 @@
+dmlblog_administration:
+    pattern: /{categorie}.{format}
+    defaults: { _controller: DmlBlogBundle:Administration:menu, format: php }
+
+dmlblog_produit_derive:
+    resource: "@DmlBlogBundle/Resources/config/routing_produit_derive.yml"
+    prefix: /produit-derive
+
+dmlblog_partenaire:
+    resource: "@DmlBlogBundle/Resources/config/routing_partenaire.yml"
+    prefix: /partenaire
+
+dmlblog_espace_professionnel:
+    resource: "@DmlBlogBundle/Resources/config/routing_espace_professionnel.yml"
+    prefix: /espace-professionnel
+
+dmlblog_evenement:
+    resource: "@DmlBlogBundle/Resources/config/routing_evenement.yml"
+    prefix: /evenement
+
+dmlblog_livre:
+    resource:  "@DmlBlogBundle/Resources/config/routing_livre.yml"
+    prefix:   /{fonction}
+    requirements:
+        fonction: coup-de-coeur|nouveaute
+
+dmlblog_utilisateur:
+    resource:  "@DmlBlogBundle/Resources/config/routing_utilisateur.yml"
+    prefix:   /utilisateur
+
+dmlblog_emission:
+    resource:  "@DmlBlogBundle/Resources/config/routing_emission.yml"
+    prefix:   /emission
+
+dmlblog_gallerie:
+    resource:  "@DmlBlogBundle/Resources/config/routing_gallerie.yml"
+    prefix:   /gallerie
+
+dmlblog_nouveaute:
+    resource:  "@DmlBlogBundle/Resources/config/routing_newsletter.yml"
+    prefix:   /news-letter
+
+dmlblog_modifier_image:
+    pattern:   /modifier-image/{image}.{format}
+    defaults:  { _controller: DmlBlogBundle:Administration:modifierImage, format: php }
+
+dmlblog_modifier_fichier_son:
+    pattern:   /modifier-fichier-son/{fichierSon}.{format}
+    defaults:  { _controller: DmlBlogBundle:Administration:modifierFichierSon, format: php }
+
+dmlblog_modifier_information:
+    pattern: /modifier-information/{information}.{format}
+    defaults:  { _controller: DmlBlogBundle:Administration:modifierInformation, format: php }

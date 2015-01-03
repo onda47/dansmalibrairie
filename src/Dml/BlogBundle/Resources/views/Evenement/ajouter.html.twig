@@ -1,0 +1,13 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - {{ categorie }}{% endblock %}
+
+{% block body %}
+	{% include 'DmlBlogBundle:Evenement:formulaire.html.twig' with
+		{
+		'message': 'Ajout d\'évènement',
+		'route': path('dmlblog_ajouter_evenement', {'categorie': categorie}),
+        'modifier': false
+		}
+	%}
+{% endblock %}

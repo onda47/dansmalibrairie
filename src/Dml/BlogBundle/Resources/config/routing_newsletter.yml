@@ -1,0 +1,15 @@
+dmlblog_ajouter_newsletter:
+    pattern:   /ajouter.{format}
+    defaults:  { _controller: DmlBlogBundle:Newsletter:ajouter, format: php }
+
+dmlblog_modifier_newsletter:
+    pattern:   /modifier/{newsletter}.{format}
+    defaults:  { _controller: DmlBlogBundle:Newsletter:modifier, format: php }
+
+dmlblog_supprimer_newsletter:
+    pattern:   /supprimer/{newsletter}.{format}
+    defaults:  { _controller: DmlBlogBundle:Newsletter:supprimer, format: php }
+
+dmlblog_modifier_supprimer_newsletter:
+    pattern:   /modifier-supprimer.{format}
+    defaults:  { _controller: DmlBlogBundle:Newsletter:modifierSupprimer, format: php }

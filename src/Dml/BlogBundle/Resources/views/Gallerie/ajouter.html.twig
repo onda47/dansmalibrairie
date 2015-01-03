@@ -1,0 +1,13 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Gallerie{% endblock %}
+
+{% block body %}
+	{% include 'DmlBlogBundle:Gallerie:formulaire.html.twig' with
+		{
+		'message': "Ajout d'une image de gallerie",
+		'route': path('dmlblog_ajouter_gallerie'),
+        'modifier': false
+		}
+	%}
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }}, librairie Jeunesse/BD/Science-fiction situé dans la rue Garonne à Agen.
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Nos libraires spécialisé BD/Jeunesse/Science-fiction sauront guider vos achats. Notre librairie ouverte
+    au plus petit mais aussi au plus grand !." />
+{% endblock %}
+
+{% block onload %}
+onload="$(document).ready(function() { $('#myModal').modal('show'); });"
+{% endblock %}
+
+{% block body %}
+    {% if information is not null %}
+        {% if information.enPopup == true %}
+            <div class="text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg text-center" data-toggle="modal" data-target="#myModal">
+                    {{ information.messageBouton }}
+                </button>
+                <!-- Modal -->
+                <div class="modal fade text-left" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">{{ information.titre }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                {{ information.information|bbcode_filter('my_default_filter') }}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <section>
+                        <div class="well">
+                        <h1 class="text-center">{{ information.titre }}</h1>
+                            <p>{{ information.information|bbcode_filter('my_default_filter') }}</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        {% endif %}
+
+    {% endif %}
+
+    <div class="row">
+        {###############################################
+            JEUNESSE
+        ################################################}
+        <section id="accueil_jeunesse">
+            <h1>LA JEUNESSE !</h1>
+            <hr />
+
+            {% if n_jeunesse[0].slug is defined %}
+                {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {
+                'h2': 'LES NOUVEAUT&#201;S',
+                'route': path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'jeunesse'}),
+                'vars': n_jeunesse,
+                } %}
+            {% endif %}
+
+            {% if cdc_jeunesse[0].slug is defined %}
+                {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {
+                'h2': 'LES COUPS DE COEUR',
+                'route': path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'jeunesse'}),
+                'vars': cdc_jeunesse,
+                } %}
+            {% endif %}
+
+            {% if evenement_jeunesse[0].slug is defined %}
+                {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {
+                'h2': 'LES PROCHAINS &#201;V&#200;NEMENTS',
+                'route': path('dmlblog_evenement', {'categorie': 'jeunesse'}),
+                'vars': evenement_jeunesse,
+                } %}
+            {% endif %}
+
+            {# <h2 class="majuscules_bd">LES MEILLEURES VENTES</h2>
+            <h2 class="majuscules_bd">VOUS AVEZ AIM&#201;</h2>
+            <h2 class="majuscules_bd">SONDAGE</h2> #}
+        </section>
+
+        {###############################################
+            BD
+        ################################################}
+        <section id="accueil_bd">
+            <h1>LA BD !</h1>
+            <hr />
+
+            {% if n_bd[0].slug is defined %}
+                {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {
+                'h2': 'LES NOUVEAUT&#201;S',
+                'route': path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'bd'}),
+                'vars': n_bd,
+                } %}
+            {% endif %}
+
+            {% if cdc_bd[0].slug is defined %}
+                {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {
+                'h2': 'LES COUPS DE COEURS',
+                'route': path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'bd'}),
+                'vars': cdc_bd,
+                } %}
+            {% endif %}
+
+            {% if evenement_bd[0].slug is defined %}
+                {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {
+                'h2': 'LES PROCHAINS &#201;V&#200;NEMENTS',
+                'route': path('dmlblog_evenement', {'categorie': 'bd'}),
+                'vars': evenement_bd,
+                } %}
+            {% endif %}
+
+            {# <h2 class="slapstick">Les meilleurs ventes</h2>
+            <h2 class="slapstick">Vous avez aimé</h2>
+            <h2 class="slapstick">Sondage</h2> #}
+        </section>
+    </div>
+
+
+{% endblock %}

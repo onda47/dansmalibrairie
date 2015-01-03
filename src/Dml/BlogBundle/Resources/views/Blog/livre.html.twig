@@ -1,0 +1,33 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Les {{ fonction }} de nos libraires sont ici, en {{ categorie }}, vous trouverez ici les meilleurs livres{% endblock %}
+
+{% block body %}
+	<section class="articles {{ categorie }}">
+		<h1>
+			<span>! {% if fonction == 'nouveaute' %}NOUVEAUTÉS {% else %}COUPS DE COEUR {% endif %}{{ categorie|upper}} !</span>
+		</h1><br />
+
+		{% for livre in livres %}
+			{% include 'DmlBlogBundle:Blog:contenuLivre.html.twig' %}
+			<hr />
+		{% endfor %}
+	</section>
+	<div class="row">
+		<div class="col-md-12 text-center">
+				{# S'il y a plus d'une page, on affiche la liste des pages #}
+				{% if nb_page > 1 %}
+					<ul class="pagination">
+						<li><a href="{{ path('dmlblog_livre', {'categorie': categorie, 'fonction': fonction, 'page': 1}) }}">&laquo;</a></li>
+						{# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+						{% for p in range(1, nb_page) %}
+							<li{% if p == page %} class="active"{% endif %}>
+								<a href="{{ path('dmlblog_livre', {'categorie': categorie, 'fonction': fonction, 'page': p}) }}">{{ p }}</a>
+							</li>
+						{% endfor %}
+						<li><a href="{{ path('dmlblog_livre', {'categorie': categorie, 'fonction': fonction, 'page': nb_page}) }}">&raquo;</a></li>
+					</ul>
+			  {% endif %}
+		</div>
+	</div>
+{% endblock %}

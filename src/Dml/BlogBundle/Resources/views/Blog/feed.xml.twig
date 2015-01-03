@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Dans ma librairie : Jeunesse et BD à Agen, place des laitiers</title>
+        <description>Librairie spécialisé bande dessinée, manga, littérature fantastique et jeunesse.</description>
+        <link>http://dansmalibrairie.fr/</link>
+        <image>
+            <url>http://dansmalibrairie.fr/{{ asset('/bundles/blog/img/dml_logo.png') }}</url>
+            <title>Dans ma librairie : Jeunesse et BD à Agen, place des laitiers</title>
+            <link>http://dansmalibrairie.fr/</link>
+        </image>
+        <language>fr</language>
+        <category>Librairie</category>
+        <pubDate>{{ "now"|date("rfc822") }}</pubDate>
+        <lastBuildDate>{{ "now"|date("rfc822") }}</lastBuildDate>
+        <atom:link href="http://dansmalibrairie.fr/feed.rss" rel="self" type="application/rss+xml" />
+
+        {% for article in n_jeunesse %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.image,
+            'type': "image",
+            'route': url('dmlblog_livre_unique', {'fonction': 'nouveaute', 'categorie': 'jeunesse', 'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteurArticle
+            } %}
+
+        {% endfor %}
+        {% for article in cdc_jeunesse %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.image,
+            'type': "image",
+            'route': url('dmlblog_livre_unique', {'fonction': 'coup-de-coeur', 'categorie': 'jeunesse', 'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteurArticle
+            } %}
+        {% endfor %}
+
+        {% for article in evenement_jeunesse %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.image,
+            'type': "image",
+            'route': url('dmlblog_livre_unique', {'fonction': 'coup-de-coeur', 'categorie': 'bd', 'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteur
+            } %}
+        {% endfor %}
+        {% for article in n_bd %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.image,
+            'type': "image",
+            'route': url('dmlblog_livre_unique', {'fonction': 'nouveaute', 'categorie': 'bd', 'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteurArticle
+            } %}
+        {% endfor %}
+        {% for article in cdc_bd %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.image,
+            'type': "image",
+            'route': url('dmlblog_livre_unique', {'fonction': 'coup-de-coeur', 'categorie': 'bd', 'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteurArticle
+            } %}
+        {% endfor %}
+        {% for article in evenement_bd %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.image,
+            'type': "image",
+            'route': url('dmlblog_livre_unique', {'fonction': 'coup-de-coeur', 'categorie': 'bd', 'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteur
+            } %}
+        {% endfor %}
+        {% for article in emissions %}
+            {% include 'DmlBlogBundle:Blog:feedEncadre.xml.twig' with {
+            'titre': article.titre|striptags,
+            'contenu': article.description|striptags,
+            'fichier': article.fichierSon,
+            'type': "audio",
+            'route': url('dmlblog_emission_unique', {'slug': article.slug}),
+            'date': article.datePublication,
+            'auteur': article.auteur
+            } %}
+        {% endfor %}
+    </channel>
+</rss>

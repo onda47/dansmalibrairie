@@ -1,0 +1,142 @@
+{% extends "DmlBlogBundle::layout.html.twig" %}
+
+{% block title %}
+	{{ parent() }} - présentation de la librairie, de l'équipe et nos parutions dans les journaux !
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Violène Mesnilgrente, Grégory Belfio, Pascale et Michel Braun, voilà l'équipe qui vous accueillera dans la librairie.
+    Vous verrez sur cette page les objectifs de la librairie, l'équipe et nos parutions dans les journaux !" />
+{% endblock %}
+
+{% block body %}
+	<section id="presentation_librairie">
+		<aside>
+			<h1>Présentation</h1>
+			<div>
+				<p>« Dans ma librairie » est une librairie spécialisée en Bande dessinée et en littérature jeunesse. Elle a été fondée en 1997.</p>
+
+				<p>D'abord uniquement consacrée à la bande dessinée, elle a développé en 2007 un pôle littérature jeunesse, conçu et géré au même titre que le pôle bd, comme une véritable spécialisation.</p>
+
+				<p>En aout 2013, Michel Braun a repris la librairie avec pour objectif de prolonger le projet initial, à savoir proposer un service de qualité grâce à un fonds spécialisé et représentatif avec l'aide d'un personnel de libraires compétents, tout en apportant ses propres projets de développement notamment en terme d'animations et d'outils de communication.</p>
+
+				<p>« Dans ma librairie » fait partie du réseau CANAL BD du Groupement des Libraires de Bande Dessinée (GLBD) regroupant près de 100 librairies indépendantes spécialisées en bandes dessinées. Cette adhésion lui permet entre autres de bénéficier de relations privilégiées établies entre le GLBD et les éditeurs, de participer aux actions de promotion du groupement et de proposer à ses clients des ouvrages rares et/ou épuisés ainsi que des tirages exclusifs.</p>
+
+				<p>Nous sommes également membres de l'association des Librairies Atlantiques et depuis septembre 2009 la librairie dispose du label LIR, du Centre National du Livre, récompensant les meilleures librairies indépendantes.</p>
+
+				<p>En tant que librairie spécialisée, nous nous efforçons de proposer l'assortiment le plus large possible afin que nos clients puissent avoir accès à la quasi-totalité de la production éditoriale et pour cela nous travaillons avec l'ensemble des éditeurs diffusés nationalement ainsi qu'avec nombre de petits éditeurs, d'éditeurs locaux et d'auteurs en auto édition. Ainsi la librairie met à votre disposition un stock de plus de 10000 références en bandes dessinées et mangas et 11000 titres en jeunesse (fictions et documentaires) sur une surface de vente de 140m².</p>
+
+				<p>Un des objectifs  de « Dans ma librairie » est d'apporter sa contribution dans la promotion de la culture à l'échelon local. A ce titre, elle est le partenaire des acteurs de la vie culturelle locale : bibliothèques, médiathèques, écoles et participe à de prochains événements autour du livre et de la culture en général.</p>
+			</div>
+		</aside>
+	</section>
+
+	<hr />
+
+
+	<section id="equipe">
+		<h1>Notre équipe</h1>
+
+		<div class="row">
+			<aside>
+				{% include 'DmlBlogBundle:Blog:membre.html.twig' with {
+				'img': asset('bundles/blog/img/trombinoscope/michel-braun.jpg'),
+				'nom': "Michel Braun",
+				'texte': "Responsable de la librairie"
+				} %}
+			</aside>
+			<aside>
+				{% include 'DmlBlogBundle:Blog:membre.html.twig' with {
+				'img': asset('bundles/blog/img/trombinoscope/violène-mesnilgrente.jpg'),
+				'nom': "Violène Mesnilgrente",
+				'texte': "Diplômé en librairie<br />Spécialisé en jeunesse<br />Libraire depuis 2009"
+				} %}
+			</aside>
+		</div>
+		<div class="row">
+			<aside>
+				{% include 'DmlBlogBundle:Blog:membre.html.twig' with {
+				'img': asset('bundles/blog/img/trombinoscope/grégory-belfio.jpg'),
+				'nom': "Grégory Belfio",
+				'texte': "Diplômé en librairie<br />Spécialisé en bd et manga<br />Libraire depuis 2003"
+				} %}
+			</aside>
+			<aside>
+				{% include 'DmlBlogBundle:Blog:membre.html.twig' with {
+				'img': asset('bundles/blog/img/trombinoscope/sandie-da-ré.jpg'),
+				'nom': "Sandie Da Ré",
+				'texte': "Ancienne bibliothécaire<br />4 années d'expérience en librairie"
+				} %}
+			</aside>
+		</div>
+	</section>
+
+	<hr />
+	<section id="article_presse">
+		<h1>Nos parution dans la presse</h1>
+		<div class="row">
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'Agen. Éric Liberge vient buller "dans ma librairie"',
+			'photo': 'eric-liberge-vient-buller-dans-ma-librairie.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': 'agen-eric-liberge-vient-buller-dans-ma-librairie', 'image': 'eric-liberge-vient-buller-dans-ma-librairie.png'}),
+			'lien_direct': 'http://www.ladepeche.fr/article/2014/04/19/1866511-agen-eric-liberge-vient-buller-dans-ma-librairie.html',
+			'journal': 'La dépêche'
+			} %}
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'Les librairies veulent avoir voix au chapitre',
+			'photo': 'les-librairies-veulent-avoir-voix-au-chapitre.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': 'les-librairies-veulent-avoir-voix-au-chapitre', 'image': 'les-librairies-veulent-avoir-voix-au-chapitre.png' }),
+			'lien_direct': 'http://www.sudouest.fr/2014/04/05/les-libraires-veulent-avoir-voix-au-chapitre-1516756-3603.php',
+			'journal': 'Sud Ouest'
+			} %}
+		</div>
+		<div class="row">
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'Agen. Cornebidouille en personne «Dans ma librairie»',
+			'photo': 'cornebidouille-en-personne.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': '"Dans ma librairie" a changé de tête', 'image': 'cornebidouille-en-personne.png' }),
+			'lien_direct': 'http://www.ladepeche.fr/article/2013/12/20/1778720-cornebidouille-en-personne-dans-ma-librairie.html',
+			'journal': 'La Dépêche'
+			} %}
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'La librairie BD Bulle change de scénariste',
+			'photo': 'dans_ma_librairie_a_change_de_scenariste.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': 'La librairie BD Bulle change de scénariste', 'image': 'dans_ma_librairie_a_change_de_scenariste.png'}),
+			'lien_direct': 'http://www.sudouest.fr/2013/08/23/la-librairie-bd-bulle-change-de-scenariste-1148372-3603.php',
+			'journal': 'du Sud Ouest'
+			} %}
+		</div>
+		<div class="row">
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': '"Dans ma librairie" a changé de tête',
+			'photo': 'dans_ma_librairie_a_change_de_tete.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': '"Dans ma librairie" a changé de tête', 'image': 'dans_ma_librairie_a_change_de_tete.png'}),
+			'lien_direct': 'http://www.ladepeche.fr/article/2013/08/19/1691826-agen-dans-ma-librairie-a-change-de-tete.html',
+			'journal': 'La Dépêche'
+			} %}
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'A Agen, "dans ma librairie", BD, mangas et littérature jeunesse sont à l\'honneur',
+			'photo': 'mangas-et-litterature-jeunesse-sont-a-l-honneur.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': 'bd-mangas-litterature-jeunesse', 'image': 'mangas-et-litterature-jeunesse-sont-a-l-honneur.png'}),
+			'lien_direct': 'http://www.aqui.fr/special/a-agen-laquo-dans-ma-librairie-raquo-bd-mangas-et-litterature-jeunesse-sont-a-l-honneur,8116.html',
+			'journal': 'Aqui'
+			} %}
+		</div>
+		<div class="row">
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'Astaffort. "Dans ma librairie" pour un jour à la médiathèque',
+			'photo': 'pour_un_jour_a_la_mediatheque.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': 'dans-ma-librairie-a-changé-de-tête', 'image': 'pour_un_jour_a_la_mediatheque.png'}),
+			'lien_direct': 'http://www.ladepeche.fr/article/2011/11/23/1222463-astaffort-dans-ma-librairie-pour-un-jour-a-la-mediatheque.html',
+			'journal': 'La Dépêche'
+			} %}
+			{% include 'DmlBlogBundle:Blog:articlePresse.html.twig' with {
+			'titre': 'Agen. "Dans ma librairie", indépendante et conviviale',
+			'photo': 'indépendante_et_conviviale.png',
+			'route': path('dmlblog_librairie_article_presse', {'titre': 'indépendante-et-conviviale', 'image': 'indépendante_et_conviviale.png'}),
+			'lien_direct': 'http://www.ladepeche.fr/article/2013/02/06/1553869-agen-dans-ma-librairie-independante-et-conviviale.html ',
+			'journal': 'La Dépêche'
+			} %}
+		</div>
+	</section>
+{% endblock %}

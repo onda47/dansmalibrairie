@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"           content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:site_name"   content="Dans ma librairie" />
+    <meta property="og:locale"      content="fr_FR" />
+
+    <meta property="fb:app_id"      content="591399574273362" />
+    <meta property="fb:admins"      content="297290237076305" />
+
+    {% block meta %}
+    {% endblock meta %}
+    <title>
+        {% block title %}Dans ma librairie{% endblock title %}
+    </title>
+    {% block style %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/blog/bootstrap/dist/css/bootstrap.css') }}">
+        {# <link rel="stylesheet" type="text/css" href="{{ asset('bundles/blog/bootstrap/dist/css/bootstrap-theme.css') }}"> #}
+    {% endblock style %}
+    {% block preload_javascripts %}{% endblock preload_javascripts %}
+</head>
+<body {% block onload %}{% endblock onload %}>
+    {% include '::sdk_facebook.html.twig' %}
+    <div class="container">
+        {% include 'header.html.twig' %}
+
+        {% if categorie is defined %}
+            {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': categorie})) %}
+        {% else %}
+            {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': 'jeunesse'})) %}
+        {% endif %}
+
+
+        {% for message in app.session.flashbag.get('info') %}
+            <p class="flash_info">{{ message }}</p>
+        {% endfor %}
+
+        <div id="body">
+            <div id="content">
+                {% block b %}
+                {% endblock b %}
+            </div>
+        </div>
+
+        {% include 'footer.html.twig' %}
+    </div>
+    {% block javascripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ asset('bundles/blog/js/jquery2.1.0.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/blog/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-47443283-1', 'dansmalibrairie.fr');
+            ga('send', 'pageview');
+        </script>
+    {% endblock javascripts %}
+</body>
+</html>

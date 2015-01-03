@@ -1,0 +1,23 @@
+dmlblog_ajouter_evenement:
+    pattern:   /{categorie}/ajouter.{format}
+    defaults:  { _controller: DmlBlogBundle:Evenement:ajouter, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction
+
+dmlblog_modifier_evenement:
+    pattern:   /{categorie}/modifier/{evenement}.{format}
+    defaults:  { _controller: DmlBlogBundle:Evenement:modifier, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction
+
+dmlblog_supprimer_evenement:
+    pattern:   /{categorie}/supprimer/{evenement}.{format}
+    defaults:  { _controller: DmlBlogBundle:Evenement:supprimer, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction
+
+dmlblog_modifier_supprimer_evenement:
+    pattern:   /{categorie}/modifier-supprimer.{format}
+    defaults:  { _controller: DmlBlogBundle:Evenement:modifierSupprimer, format: php }
+    requirements:
+        categorie: bd|jeunesse|science-fiction

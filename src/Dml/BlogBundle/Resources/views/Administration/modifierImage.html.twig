@@ -1,0 +1,38 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block title %}{{ parent() }} - Modifier image{% endblock %}
+
+{% block titre_admin %} - Image {% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-12">
+			<form action="{{ path('dmlblog_modifier_image', {'image': image.id}) }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+				<fieldset>
+					<legend>Modifier une image</legend>
+					{{ form_errors(form) }}
+					<div class="form-group">
+						{{ form_label(form.alt) }}
+						<div class="col-md-3">
+							{{ form_widget(form.alt) }}
+						</div>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.file) }}
+						<div class="col-md-3">
+							{{ form_widget(form.file) }}
+						</div>
+					</div>
+					{{ form_rest(form) }}
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<a href="{{ path('dmlblog_modifier_supprimer_utilisateur') }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+							<button class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+						</div>
+					</div>
+				</fieldset>
+
+			</form>
+		</div>
+	</div>
+{% endblock %}

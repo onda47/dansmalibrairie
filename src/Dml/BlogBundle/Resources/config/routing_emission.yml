@@ -1,0 +1,15 @@
+dmlblog_modifier_supprimer_emission:
+    pattern:   /modifier-supprimer-emission.{format}
+    defaults:  { _controller: DmlBlogBundle:Emission:modifierSupprimer, format: php }
+
+dmlblog_ajouter_emission:
+    pattern:   /ajouter-emission.{format}
+    defaults:  { _controller: DmlBlogBundle:Emission:ajouter, format: php }
+
+dmlblog_modifier_emission:
+    pattern:   /modifier-emission/{emission}.{format}
+    defaults:  { _controller: DmlBlogBundle:Emission:modifier, format: php }
+
+dmlblog_supprimer_emission:
+    pattern:   /supprimer-emssion/{emission}.{format}
+    defaults:  { _controller: DmlBlogBundle:Emission:supprimer, format: php }

@@ -1,0 +1,21 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block titre_admin %} - Partenaire{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-md-8">
+		<p class="alert alert-warning">Etes-vous bien certain de vouloir supprimer la catégorie de partenaire "{{ categoriePartenaire.nom }}"<br />
+		<span class="glyphicon glyphicon-warning-sign"></span> Ceci supprimera également tout les partenaires associés.</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<form method="post" action="{{ path('dmlblog_supprimer_categorie_partenaire', {'categoriePartenaire': categoriePartenaire.id}) }}">
+			<a href="{{ path('dmlblog_administration', {'categorie': 'partenaire'}) }}" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+			<button type="submit" class="btn btn-danger">Supprimer <span class="glyphicon glyphicon-trash"></span></button>
+			{{ form_rest(form) }}
+		</form>
+	</div>
+</div>
+{% endblock %}
