@@ -76,6 +76,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Dml\UserBundle\Entity\User
+    from_email:
+        address: contact@dansmalibrairie.com
+        sender_name: "Dans ma librairie"
     registration:
         confirmation:
             enabled: true
