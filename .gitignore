@@ -1,6 +1,5 @@
 /web/bundles/
 /web/uploads/
-/web/emoticons/
 /logs/
 /app/bootstrap.php.cache
 /app/cache/*

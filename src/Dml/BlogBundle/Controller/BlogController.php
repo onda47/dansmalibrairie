@@ -256,14 +256,15 @@ class BlogController extends Controller
                     ->setTo($this->container->getParameter('mailer_user'))
                     ->setBody($mail->getPrenom().' '.$mail->getNom().' vous envoit: '.$mail->getContenu());
 
-                $this->get('mailer')->send($message);
+                if ($this->get('mailer')->send($message)) {
+                	$this->get('session')->getFlashBag()->add('info', 'Votre message a bien été envoyé !');
 
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($mail);
-                $em->flush();
-
-                $this->get('session')->getFlashBag()->add('info', 'Votre message a bien été envoyé !');
-
+	                $em = $this->getDoctrine()->getManager();
+	                $em->persist($mail);
+	                $em->flush();
+                } else {
+                	$this->get('session')->getFlashBag()->add('info', "Une erreur s'est produite, veuillez envoyer un mail à contact@dansmalibrairie.com pour le signaler.");
+                }
                 return $this->redirect($this->generateUrl("dmlblog_homepage"));
             }
         }
