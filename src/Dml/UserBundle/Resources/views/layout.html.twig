@@ -1,16 +1,12 @@
-{% extends 'DmlBlogBundle::layout.html.twig' %}
+{% extends '::layout.html.twig' %}
 
-{% block body %}
+{% block b %}
 	{% for key, messages in app.session.flashbag.all() %}
-		
 		{% for message in messages %}
-			
-		<div class="alert alert-{{ key }}">
-			{{ message|trans({}, 'FOSUserBundle') }}
-		</div>
-		
-		{% endfor %}
-
+    		<div class="alert alert-{{ key }}">
+    			{{ message|trans({}, 'FOSUserBundle') }}
+    		</div>
+        {% endfor %}
 	{% endfor %}
 	
 	{% block fos_user_content %}

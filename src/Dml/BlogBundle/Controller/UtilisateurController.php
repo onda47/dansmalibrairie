@@ -22,25 +22,16 @@ class UtilisateurController extends Controller
 	/**
 	 * @Template()
 	 */
-	public function modifierAction(User $user)
+	public function modifierAction($id)
 	{
-		$form = $this->createForm(new UtilisateurType);
-		$request = $this->get('request');
-		if ($this->getRequest()->isMethod('POST'))
-		{
-			$form->bind($this->getRequest());
-			if ($form->isValid())
-			{
-				$em = $this->getDoctrine()->getManager();
+		$userManager = $this->get('fos_user.user_manager');
+		$user = $userManager->findUserBy(array('id' => $id));
+		$user->addRole('ROLE_PROFESSIONNEL');
+		$userManager->updateUser($user);
 
-				$em->persist($user);
-				$em->flush();
+		$this->get('session')->getFlashBag()->add('info', "L'utilisateur a bien été promu !");
 
-				$this->get('session')->getFlashBag()->add('info', "L'utilisateur a bien été modifié !");
-
-				return $this->redirect($this->generateUrl("dmlblog_modifier_supprimer_utilisateur"));
-			}
-		}
-		return array('form' => $form->createView(), 'user' => $user, 'categorie' => 'utilisateur');
+		return $this->redirect($this->
+			generateUrl("dmlblog_administration", array("categorie" => "utilisateur")));
 	}
 }

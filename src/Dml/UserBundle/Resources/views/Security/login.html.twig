@@ -1,6 +1,7 @@
 {% extends "DmlUserBundle::layout.html.twig" %}
 
-{% block body %}
+{% trans_default_domain 'FOSUserBundle' %}
+
 {% block fos_user_content %}
 	<div class="row">
 		<div class="col-md-12">
@@ -9,7 +10,7 @@
 					<div class="col-md-5">
 						<div class="alert alert-danger">
 							<p>
-								{{ error }}
+								{{ error.messageKey|trans(error.messageData, 'security') }}
 							</p>
 						</div>
 					</div>
@@ -53,4 +54,3 @@
 	</div>
 
 {% endblock fos_user_content %}
-{% endblock body %}
