@@ -1,6 +1,5 @@
 {% extends 'DmlUserBundle::layout.html.twig' %}
 
-{% block body %}
 {% block fos_user_content %}
 	<div class="row">
 		<div class="col-md-12">
@@ -8,6 +7,17 @@
 				<fieldset>
 	                <legend>Souscription au site</legend>
 	                {{ form_errors(form) }}
+	                {{ form_errors(form) }}
+					{% for key, field in form %}
+						{% if key=='plainPassword' %}
+						{#le field plainPassword est composé de deux fields text#}
+						{% for subField in field %}
+							{{ form_errors(subField) }}
+						{% endfor %}
+						{% else %}
+						{{ form_errors(field) }}
+						{% endif %}
+					{% endfor %}
 					<div class="form-group">
 						{{ form_label(form.username, 'Login : ', { 'label_attr': {'class': 'col-md-2 control-label'} }) }}
 						<div class="col-md-3">
@@ -43,4 +53,3 @@
 		</div>
 	</div>
 {% endblock fos_user_content %}
-{% endblock body %}

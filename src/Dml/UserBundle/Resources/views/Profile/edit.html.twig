@@ -1,42 +1,51 @@
 {% extends 'DmlUserBundle::layout.html.twig' %}
 
-{% block body %}
-	{% block fos_user_content %}
-		<div class="row">
-			<div class="col-md-12">
-				<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
-					<div class="form-group">
-						{{ form_label(form.username, "Nom d'utilisateur : ", {'label_attr': {'class': 'col-md-2 control-label'} }) }}
-						<div class="col-md-3">
-							{{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
-						</div>
+{% block fos_user_content %}
+	<div class="row">
+		<div class="col-md-12">
+			<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+				{{ form_errors(form) }}
+				{% for key, field in form %}
+					{% if key=='plainPassword' %}
+					{#le field plainPassword est composé de deux fields text#}
+					{% for subField in field %}
+						{{ form_errors(subField) }}
+					{% endfor %}
+					{% else %}
+					{{ form_errors(field) }}
+					{% endif %}
+				{% endfor %}
+				<div class="form-group">
+					{{ form_label(form.username, "Nom d'utilisateur : ", {'label_attr': {'class': 'col-md-2 control-label'} }) }}
+					<div class="col-md-3">
+						{{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
 					</div>
-					<div class="form-group">
-						{{ form_label(form.email, "Adresse e-mail : ", { 'label_attr': {'class': 'col-md-2 control-label'} }) }}
-						<div class="col-md-3">
-							{{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
-						</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.email, "Adresse e-mail : ", { 'label_attr': {'class': 'col-md-2 control-label'} }) }}
+					<div class="col-md-3">
+						{{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
 					</div>
-					<div class="form-group">
-						{{ form_label(form.current_password, "Mot de passe actuel : ", {'label_attr': {'class': 'col-md-2 control-label'} }) }}
-						<div class="col-md-3">
-							{{ form_widget(form.current_password, { 'attr': {'class': 'form-control'} }) }}
-						</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.current_password, "Mot de passe actuel : ", {'label_attr': {'class': 'col-md-2 control-label'} }) }}
+					<div class="col-md-3">
+						{{ form_widget(form.current_password, { 'attr': {'class': 'form-control'} }) }}
 					</div>
-					{{ form_rest(form) }}
-					<div class="form-group">
-						<div class="col-md-offset-2 col-md-10">
-							<a
-								class="btn btn-info" 
-								href="{{ path('fos_user_profile_show') }}">
-									<span class="glyphicon glyphicon-arrow-left"></span> Retour
-							</a>
-							
-							<button type="submit" class="btn btn-primary">Mettre à jour <span class="glyphicon glyphicon-ok"></span></button>
-						</div>
+				</div>
+				{{ form_rest(form) }}
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<a
+							class="btn btn-info" 
+							href="{{ path('fos_user_profile_show') }}">
+								<span class="glyphicon glyphicon-arrow-left"></span> Retour
+						</a>
+						
+						<button type="submit" class="btn btn-primary">Mettre à jour <span class="glyphicon glyphicon-ok"></span></button>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 		</div>
-	{% endblock fos_user_content %}
-{% endblock body %}
+	</div>
+{% endblock fos_user_content %}
