@@ -84,3 +84,10 @@ php app/console cache:clear
 php6 app/console cache:clear --env=prod
 vim app/config/routing.yml 
 php6 app/console cache:clear --env=prod
+git pull
+git checkout .bash_history 
+git pull
+php app/console cache:clear --env=prod
+php6 app/console cache:clear --env=prod
+git pull
+php6 app/console cache:clear --env=prod

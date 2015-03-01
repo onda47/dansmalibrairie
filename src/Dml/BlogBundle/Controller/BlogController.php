@@ -253,7 +253,7 @@ class BlogController extends Controller
                 $message = \Swift_Message::newInstance()
                     ->setSubject($mail->getSujet())
                     ->setFrom($mail->getCourriel())
-                    ->setTo($this->container->getParameter('mailer_username'))
+                    ->setTo($this->container->getParameter('mailer_user'))
                     ->setBody($mail->getPrenom().' '.$mail->getNom().' vous envoit: '.$mail->getContenu());
 
                 $this->get('mailer')->send($message);
