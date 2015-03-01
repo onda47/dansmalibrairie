@@ -30,7 +30,7 @@
 									<a
 										href="{{ path('dmlblog_modifier_utilisateur', { 'id': utilisateur.id }) }}"
 										title='Modifier "{{ utilisateur.username }}"'>
-											<span class="glyphicon glyphicon-wrench"></span>
+											Promouvoir
 									</a>
 								</td>
 							</tr>
@@ -51,11 +51,12 @@
 				<p>
 					Aide :
 					<ul>
-						<li>ROLE_USER : rôle donné par défaut aux utilisateurs enregistrés</li>
+						<li>ROLE_USER : rôle donné à l'enregistrement des utilisateurs</li>
 						<li>ROLE_PROFESSIONNEL : rôle permettant l'accès à l'espace professionnel</li>
 						<li>ROLE_ADMIN : rôle permettant l'accès à l'espace d'administration</li>
 						<li>ROLE_SUPER_ADMIN : rôle équivalent à ROLE_ADMIN</li>
 					</ul>
+					Cliquer sur promouvoir ajoute ROLE_PROFESSIONNEL à un utilisateur.
 				</p>
 			</div>
 		</div>
