@@ -91,3 +91,51 @@ php app/console cache:clear --env=prod
 php6 app/console cache:clear --env=prod
 git pull
 php6 app/console cache:clear --env=prod
+ls
+git st
+git status
+git pull
+git status
+git commit -am "update dml.fr"
+git push origin master
+git checkout
+git checkout ^^RESET
+git merge
+git st
+git status
+git merge origin/master
+git st
+git status
+git log
+git checkout bfa2ba8c970159c96e2d6b5a346ab9c9b6ba44d0
+git status
+git checkout master
+git status
+git pull 
+git log
+ls web/emoticons/
+git add *
+git add --all
+git stash
+git pull
+rm web/emoticons/angry.png 
+git pull
+git rm web/emoticons/*
+cat .gitignore 
+vim .gitignore 
+git pull
+git merge origin/master
+git stash
+git pull
+git log
+git revert bfa2ba8c970159c96e2d6b5a346ab9c9b6ba44d0
+git pull
+rm .viminfo 
+git pull
+rm web/emoticons/*
+git pull
+git status
+cat app/config/config.yml 
+php app/console fos:user
+vim app/config/parameters.yml
+ll

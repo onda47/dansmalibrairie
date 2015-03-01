@@ -8,6 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:x
 :wq
 
 # Search String History (newest to oldest):
@@ -34,18 +35,20 @@
 	"
 
 # File marks:
-'0  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
-'1  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
-'2  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
-'3  3  14  ~/.gitignore
-'4  4  5  ~/.gitignore
-'5  4  0  ~/app/config/routing.yml
-'6  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
-'7  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
-'8  32  28  ~/app/AppKernel.php
-'9  5  0  ~/app/config/routing_dev.yml
+'0  13  0  ~/app/config/parameters.yml
+'1  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
+'2  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
+'3  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+'4  3  14  ~/.gitignore
+'5  4  5  ~/.gitignore
+'6  4  0  ~/app/config/routing.yml
+'7  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+'8  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
+'9  32  28  ~/app/AppKernel.php
 
 # Jumplist (newest first):
+-'  13  0  ~/app/config/parameters.yml
+-'  1  0  ~/app/config/parameters.yml
 -'  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
 -'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
 -'  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
@@ -143,10 +146,11 @@
 -'  1  16  ~/web/php.ini
 -'  5  0  ~/app/config/routing_dev.yml
 -'  1  0  ~/app/config/routing_dev.yml
--'  14  94  ~/web/app_dev.php
--'  1  0  ~/web/app_dev.php
 
 # History of marks within files (newest to oldest):
+
+> ~/app/config/parameters.yml
+	"	13	0
 
 > ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
 	"	6	20
