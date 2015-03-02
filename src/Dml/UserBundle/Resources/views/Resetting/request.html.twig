@@ -1,9 +1,14 @@
 {% extends 'DmlUserBundle::layout.html.twig' %}
 
+{% trans_default_domain 'FOSUserBundle' %}
+
 {% block fos_user_content %}
 	<div class="row">
 		<div class="col-md-12">
 			<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="form-horizontal" role="form">
+				{% if invalid_username is defined %}
+		            <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+		        {% endif %}
 				<div class="form-group">
 					<label for="username" class="col-md-3 control-label">Nom d'utilisateur ou adresse e-mail</label>
 					<div class="col-md-3">

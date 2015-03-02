@@ -17,10 +17,12 @@
                 Du {{ evenement.dateDebut|localizeddate('short', 'none') }} à {{ evenement.dateDebut|localizeddate('none', 'short') }} au {{ evenement.dateFin|localizeddate('short', 'none') }} à {{ evenement.dateFin|localizeddate('none', 'short') }}
             </h3>
             <p>{{ evenement.description|bbcode_filter('my_default_filter') }}</p>
+            <p class="text-right">
+                Cette article a été publié le {{ evenement.datePublication|date('d/m/Y') }} par {{ evenement.auteur }}
+                {% include '::share.html.twig' with {'url': url('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug})} %}
+            </p>
         </div>
-        <p class="text-right">
-            Cette article a été publié le {{ evenement.datePublication|date('d/m/Y') }} par {{ evenement.auteur }}
-            {% include '::share.html.twig' with {'url': url('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug})} %}
-        </p>
+        <br />
+        {% include '::comment.html.twig' with {'url': url('dmlblog_evenement_unique', {'categorie': categorie, 'slug': evenement.slug})} %}
     </div>
 </article>

@@ -14,7 +14,7 @@
 				title="{{ livre.image.alt }}">
 
 				<img
-					src="{{ asset('') ~ livre.image.webChemin }}"
+					src="{{ asset(livre.image.webChemin) }}"
 					alt="{{ livre.image.alt }}"
 					title="{{ livre.image.alt }}" />
 			</a>
@@ -37,6 +37,7 @@
 			</p>
 				{% include '::share.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
 		</div>
+		<br />
 		{% include '::comment.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
 	</div>
 </article>

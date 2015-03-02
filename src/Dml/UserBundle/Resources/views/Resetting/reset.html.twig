@@ -1,9 +1,22 @@
 {% extends 'DmlUserBundle::layout.html.twig' %}
 
+{% trans_default_domain 'FOSUserBundle' %}
+
 {% block fos_user_content %}
 	<div class="row">
 		<div class="col-md-12">
 			<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+				{{ form_errors(form) }}
+				{% for key, field in form %}
+					{% if key=='plainPassword' %}
+					{#le field plainPassword est composé de deux fields text#}
+					{% for subField in field %}
+						{{ form_errors(subField) }}
+					{% endfor %}
+					{% else %}
+					{{ form_errors(field) }}
+					{% endif %}
+				{% endfor %}
 				<div class="form-group">
 					{{ form_label(form.plainPassword.first, "Nouveau mot de passe: ", {'label_attr': {'class': 'col-md-2 control-label'} }) }}
 					<div class="col-md-3">
