@@ -37,5 +37,6 @@
 			</p>
 				{% include '::share.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
 		</div>
+		{% include '::comment.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
 	</div>
 </article>
