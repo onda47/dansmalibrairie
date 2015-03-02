@@ -35,18 +35,20 @@
 	"
 
 # File marks:
-'0  13  0  ~/app/config/parameters.yml
-'1  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
-'2  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
-'3  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
-'4  3  14  ~/.gitignore
-'5  4  5  ~/.gitignore
-'6  4  0  ~/app/config/routing.yml
-'7  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
-'8  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
-'9  32  28  ~/app/AppKernel.php
+'0  16  7  ~/.gitignore
+'1  13  0  ~/app/config/parameters.yml
+'2  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
+'3  7  29  ~/src/Dml/BlogBundle/Resources/views/Blog/feedEncadre.xml.twig
+'4  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+'5  3  14  ~/.gitignore
+'6  4  5  ~/.gitignore
+'7  4  0  ~/app/config/routing.yml
+'8  10  71  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
+'9  113  0  ~/src/Dml/BlogBundle/Resources/views/Blog/accueil.html.twig
 
 # Jumplist (newest first):
+-'  16  7  ~/.gitignore
+-'  1  0  ~/.gitignore
 -'  13  0  ~/app/config/parameters.yml
 -'  1  0  ~/app/config/parameters.yml
 -'  6  20  ~/src/Dml/BlogBundle/Resources/views/Blog/accueilEncadre.html.twig
@@ -56,7 +58,6 @@
 -'  15  40  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
 -'  1  0  ~/src/Dml/BlogBundle/Resources/views/Blog/feed.xml.twig
 -'  3  14  ~/.gitignore
--'  1  0  ~/.gitignore
 -'  4  5  ~/.gitignore
 -'  4  0  ~/app/config/routing.yml
 -'  6  0  ~/app/config/routing.yml
@@ -144,10 +145,18 @@
 -'  1  16  ~/web/php.ini
 -'  1  16  ~/web/php.ini
 -'  1  16  ~/web/php.ini
--'  5  0  ~/app/config/routing_dev.yml
--'  1  0  ~/app/config/routing_dev.yml
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	"	16	7
+	^	16	8
+	.	16	7
+	+	4	5
+	+	3	4
+	+	2	12
+	+	3	14
+	+	16	7
 
 > ~/app/config/parameters.yml
 	"	13	0
@@ -170,15 +179,6 @@
 	+	10	71
 	+	14	34
 	+	15	40
-
-> ~/.gitignore
-	"	3	14
-	^	3	15
-	.	3	14
-	+	4	5
-	+	3	4
-	+	2	12
-	+	3	14
 
 > ~/app/config/routing.yml
 	"	4	0

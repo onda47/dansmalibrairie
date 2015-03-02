@@ -139,3 +139,13 @@ cat app/config/config.yml
 php app/console fos:user
 vim app/config/parameters.yml
 ll
+git pull
+git status
+git commit -am "bash_history et viminfo du serveur"
+git push
+git status
+git remote -v
+git remote set-url https://github.com/paul-mesnilgrente/dansmalibrairie.git
+git remote set-url origin https://github.com/paul-mesnilgrente/dansmalibrairie.git
+git remote -v
+git status
