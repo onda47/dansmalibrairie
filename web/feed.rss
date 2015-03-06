@@ -11,8 +11,8 @@
         </image>
         <language>fr</language>
         <category>Librairie</category>
-        <pubDate>Sat, 28 Feb 2015 15:17:41 +01004141</pubDate>
-        <lastBuildDate>Sat, 28 Feb 2015 15:17:41 +01004141</lastBuildDate>
+        <pubDate>Thu, 05 Mar 2015 17:14:31 +01003131</pubDate>
+        <lastBuildDate>Thu, 05 Mar 2015 17:14:31 +01003131</lastBuildDate>
         <atom:link href="http://dansmalibrairie.fr/feed.rss" rel="self" type="application/rss+xml" />
 
                     <item>
@@ -61,7 +61,7 @@ A mettre entre les mains d&#039;enfants à partir de 8/9 ans]]></description>
     <enclosure url="http://dansmalibrairie.fr/uploads/image/couv-minus.jpeg" length="5944" type="image/jpeg" />
     <link>http://www.dansmalibrairie.fr/jeunesse/coup-de-coeur/minus-l-incroyable-histoire-ses-reptiles-marins-au-temps-des-dinosaures</link>
     <guid isPermaLink="true">http://www.dansmalibrairie.fr/jeunesse/coup-de-coeur/minus-l-incroyable-histoire-ses-reptiles-marins-au-temps-des-dinosaures</guid>
-    <pubDate>Wed, 25 Feb 2015 01:00:00 +01000000</pubDate>
+    <pubDate>Wed, 25 Feb 2015 00:00:00 +01000000</pubDate>
     <author>contact@dansmalibrairie.com (Violène Mesnilgrente)</author>
 </item>
                     <item>
@@ -86,8 +86,8 @@ Le CD est La bonne humeur de loup gris raconté par Gilles Bizouerne.
 
 Opération dans la limite des stockes disponibles]]></description>
     <enclosure url="http://dansmalibrairie.fr/uploads/image/cou.jpeg" length="5575419" type="image/jpeg" />
-    <link>http://www.dansmalibrairie.fr/jeunesse/evenement/1-livre-achete-1-cd-offert</link>
-    <guid isPermaLink="true">http://www.dansmalibrairie.fr/jeunesse/evenement/1-livre-achete-1-cd-offert</guid>
+    <link>http://www.dansmalibrairie.fr/bd/evenement/1-livre-achete-1-cd-offert</link>
+    <guid isPermaLink="true">http://www.dansmalibrairie.fr/bd/evenement/1-livre-achete-1-cd-offert</guid>
     <pubDate>Tue, 27 Jan 2015 14:50:28 +01002828</pubDate>
     <author>contact@dansmalibrairie.com (Violène Mesnilgrente)</author>
 </item>
@@ -100,9 +100,9 @@ Apportez-la à la librairie avant le 24 février.
 Le gagnant sera annoncé le samedi 7 mars, à la fin de la séance de lecture en enfants vers 11h35.
 
 Le jury est composé de l&#039;équipe de la librairie : Michel, Grégory, Julie et Violène]]></description>
-    <enclosure url="http://dansmalibrairie.fr/uploads/image/concours-tendresse.pdf" length="76041" type="image/pdf" />
-    <link>http://www.dansmalibrairie.fr/jeunesse/evenement/concours-de-boite-a-bisous</link>
-    <guid isPermaLink="true">http://www.dansmalibrairie.fr/jeunesse/evenement/concours-de-boite-a-bisous</guid>
+    <enclosure url="http://dansmalibrairie.fr/uploads/image/concours-tendresse.png" length="298616" type="image/png" />
+    <link>http://www.dansmalibrairie.fr/bd/evenement/concours-de-boite-a-bisous</link>
+    <guid isPermaLink="true">http://www.dansmalibrairie.fr/bd/evenement/concours-de-boite-a-bisous</guid>
     <pubDate>Sat, 24 Jan 2015 11:35:01 +01000101</pubDate>
     <author>contact@dansmalibrairie.com (Violène Mesnilgrente)</author>
 </item>
@@ -150,6 +150,24 @@ Une très belle naration et un angle de vue original pour cet album remarquable 
     <author>contact@dansmalibrairie.com (Grégory Belfio)</author>
 </item>
                             <item>
+    <title>A vos Crayons !</title>
+    <description><![CDATA[Les samedi 28 et dimanche 29 mars se déroulera le premier festival de la bande dessinée de Sainte Livrade sur Lot (47) sur la thématique de l&#039;histoire.
+Vous y retrouverez, outre un stand de notre librairie, une quinzaine d&#039;auteurs de BD.
+
+Plus d&#039;informations sur la site de la mairie de Sainte Livrade :
+http://www.ville-ste-livrade47.fr/
+
+Sur Opale BD :
+ http://opalebd.com/festivals/naviguation/regions/4/703
+
+et au 05.53.01.26.74]]></description>
+    <enclosure url="http://dansmalibrairie.fr/uploads/image/a-vos-crayons-1.jpeg" length="133861" type="image/jpeg" />
+    <link>http://www.dansmalibrairie.fr/bd/evenement/a-vos-crayons-1</link>
+    <guid isPermaLink="true">http://www.dansmalibrairie.fr/bd/evenement/a-vos-crayons-1</guid>
+    <pubDate>Thu, 05 Mar 2015 17:14:19 +01001919</pubDate>
+    <author>contact@dansmalibrairie.com (Grégory Belfio)</author>
+</item>
+                    <item>
     <title>POLAR&#039;ENCONTRE 2015</title>
     <description><![CDATA[Venez retrouver votre librairie préférée à la 10ème édition du salon Polar&#039;encontre où vous pourrez rencontrer les auteurs suivants :
 
@@ -177,16 +195,17 @@ http://opalebd.com/festivals/details/456]]></description>
     <pubDate>Sat, 10 Jan 2015 18:32:45 +01004545</pubDate>
     <author>contact@dansmalibrairie.com (Grégory Belfio)</author>
 </item>
-                    <item>
-    <title>Rencontre dédicace avec Julie Rocheleau</title>
-    <description><![CDATA[A l&#039;occasion de la parution de la fin du triptyque de &quot;La colère de fantomas&quot;, la talentueuse dessinatrice canadienne Julie Rocheleau nous fera le plaisir de faire halte à la librairie pour une séance de dédicace.]]></description>
-    <enclosure url="http://dansmalibrairie.fr/uploads/image/fantomas.jpeg" length="59855" type="image/jpeg" />
-    <link>http://www.dansmalibrairie.fr/bd/evenement/rencontre-dedicace-avec-julie-rocheleau</link>
-    <guid isPermaLink="true">http://www.dansmalibrairie.fr/bd/evenement/rencontre-dedicace-avec-julie-rocheleau</guid>
-    <pubDate>Sat, 10 Jan 2015 17:41:43 +01004343</pubDate>
-    <author>contact@dansmalibrairie.com (Grégory Belfio)</author>
-</item>
                             <item>
+    <title>Ooby Dooby n° 65</title>
+    <description><![CDATA[Eric Péterlin, un des organisateurs du salon Polar&#039;Encontre, vient présenter le plateau d&#039;auteurs pour la 10ème édition de ce salon consacré au polar.
+Tant en roman qu&#039;en bandes dessinées : du polar , encore du polar et toujours du polar !]]></description>
+    <enclosure url="http://dansmalibrairie.fr/uploads/emission/o65.mpga" length="11904218" type="audio/mpga" />
+    <link>http://www.dansmalibrairie.fr/radio-bulle/ooby-dooby-ndeg-65</link>
+    <guid isPermaLink="true">http://www.dansmalibrairie.fr/radio-bulle/ooby-dooby-ndeg-65</guid>
+    <pubDate>Thu, 05 Mar 2015 12:09:30 +01003030</pubDate>
+    <author>contact@dansmalibrairie.com (Violène Mesnilgrente)</author>
+</item>
+                    <item>
     <title>Ooby Dooby n° 64</title>
     <description><![CDATA[La bonne humeur en littérature jeunesse : 
 - Boucle d&#039;ours par Stéphane Servant et Lætitia Le Saux chez Didier jeunesse
@@ -197,21 +216,6 @@ http://opalebd.com/festivals/details/456]]></description>
     <link>http://www.dansmalibrairie.fr/radio-bulle/ooby-dooby-ndeg-64</link>
     <guid isPermaLink="true">http://www.dansmalibrairie.fr/radio-bulle/ooby-dooby-ndeg-64</guid>
     <pubDate>Sat, 28 Feb 2015 15:14:55 +01005555</pubDate>
-    <author>contact@dansmalibrairie.com (Violène Mesnilgrente)</author>
-</item>
-                    <item>
-    <title>Ooby Dooby n° 63</title>
-    <description><![CDATA[Quelques nouveautés BD : 
-- L&#039;Algérie c&#039;est beau comme l&#039;Amérique par Olivia Burton et Mahi Grand chez Steinkis
-- Buffalo Runner par Tiburse Oger chez Rue de Sèvres
-- Un loup est un loup Tome 1 par Makyo et Federico Narda chez Glénat
-- Undertaker par Ralpf Meyer et Xavier Dorison chez Dargaud
-
-LA série : La nef des fous par Turf chez Delcourt]]></description>
-    <enclosure url="http://dansmalibrairie.fr/uploads/emission/o63.mpga" length="13312106" type="audio/mpga" />
-    <link>http://www.dansmalibrairie.fr/radio-bulle/ooby-dooby-ndeg-63</link>
-    <guid isPermaLink="true">http://www.dansmalibrairie.fr/radio-bulle/ooby-dooby-ndeg-63</guid>
-    <pubDate>Fri, 27 Feb 2015 18:40:16 +01001616</pubDate>
     <author>contact@dansmalibrairie.com (Violène Mesnilgrente)</author>
 </item>
             </channel>
