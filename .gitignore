@@ -1,5 +1,8 @@
-/web/bundles/
-/web/uploads/
+/web/bundles/*
+/web/uploads/emission/*
+/web/uploads/image/*
+/web/uploads/document/*
+/composer.lock
 /logs/
 /app/bootstrap.php.cache
 /app/cache/*
