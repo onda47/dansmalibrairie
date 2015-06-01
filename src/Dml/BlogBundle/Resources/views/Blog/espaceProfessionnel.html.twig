@@ -30,10 +30,9 @@
         </table>
     </div>
     <div class="col-md-5">
-        <h1 class="majuscules_bd text-center">IMPORTANT</h1>
+        <h1 class="majuscules_bd text-center">INFORMATIONS</h1>
         <div class="alert alert-success">
-            Veuillez utiliser le document ... pour passer vos commandes.<br />
-            Nous vous en serons reconnaissants.
+            {{ message_pro|bbcode_filter('my_default_filter') }}
         </div>
     </div>
 </div>

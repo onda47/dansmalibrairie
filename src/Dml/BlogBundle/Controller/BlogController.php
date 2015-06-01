@@ -233,7 +233,12 @@ class BlogController extends Controller
 		$liste_document = $this->getDoctrine()
 			->getRepository("DmlBlogBundle:Document")
 			->findAll();
-		return  array('liste_document' => $liste_document, 'categorie' => 'espace_professionnel');
+        $message_pro = $this->getDoctrine()
+            ->getRepository("DmlBlogBundle:MessagePro")
+            ->find(1);
+		return  array('liste_document' => $liste_document,
+            'categorie' => 'espace_professionnel', 
+            'message_pro' => $message_pro->getText());
 	}
 
 	/**

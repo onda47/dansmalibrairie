@@ -1,0 +1,31 @@
+{% extends 'DmlBlogBundle::layout_admin.html.twig' %}
+
+{% block title %}{{ parent() }} - Modifier information espace professionnel{% endblock %}
+
+{% block titre_admin %} - Information Espace Professionnel {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path('dmlblog_modifier_message_pro', {'text': text.id}) }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+                <fieldset>
+                    <legend>Modifier le message de l'espace pro</legend>
+                    {{ form_errors(form) }}
+                    <div class="form-group">
+                        {{ form_label(form.text) }}
+                        <div class="col-md-5 text-left">
+                            {{ form_widget(form.text) }}
+                        </div>
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a href="{{ path('dmlblog_administration', {'categorie': 'espace_professionnel'}) }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+                            <button class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

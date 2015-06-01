@@ -51,3 +51,7 @@ dmlblog_modifier_fichier_son:
 dmlblog_modifier_information:
     pattern: /modifier-information/{information}.{format}
     defaults:  { _controller: DmlBlogBundle:Administration:modifierInformation, format: php }
+
+dmlblog_modifier_message_pro:
+    pattern: /modifier-message-pro/{text}.{format}
+    defaults:  { _controller: DmlBlogBundle:Administration:modifierMessagePro, format: php }
