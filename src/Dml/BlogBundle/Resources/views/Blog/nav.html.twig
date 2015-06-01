@@ -12,7 +12,7 @@
             <li><a href="{{ path('dmlblog_homepage') }}"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
             <li><a href="{{ path('dmlblog_librairie') }}">La librairie</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Littérature jeunesse <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jeunesse <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'jeunesse' }) }}">Les nouveautés</a></li>
                     <li><a href="{{ path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'jeunesse'}) }}">Les coups de coeur</a></li>
@@ -20,7 +20,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">La BD<b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">BD<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'bd'}) }}">Les nouveautés</a></li>
                     <li><a href="{{ path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'bd'}) }}">Les coups de coeur</a></li>
@@ -39,7 +39,7 @@
             </li>
             <li><a href="{{ path('dmlblog_newsletter') }}">Newsletter</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Produits dérivés <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dérivés <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     {% for categorie_produit in liste_categorie_produit %}
                         <li><a href="{{ path('dmlblog_produit_derive', { 'slug': categorie_produit.slug }) }}">{{ categorie_produit.nom }}</a></li>
@@ -49,11 +49,11 @@
             <li><a href="{{ path('dmlblog_emission') }}">Podcasts</a></li>
             <li><a href="{{ path('dmlblog_gallerie') }}">Gallerie</a></li>
 
-            {% if (is_granted('ROLE_PROFESSIONNEL')) %}
+            {# {% if (is_granted('ROLE_PROFESSIONNEL')) %} #}
 
                 <li><a href="{{ path('dmlblog_espace_professionnel') }}"><span class="glyphicon glyphicon-briefcase"></span> Espace professionnel</a></li>
 
-            {% endif %}
+            {# {% endif %} #}
 
             {% if (is_granted('ROLE_ADMIN')) %}
 
