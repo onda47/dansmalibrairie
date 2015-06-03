@@ -1,0 +1,104 @@
+#accueil_jeunesse, #accueil_bd
+{
+	.make-md-column(6);
+	h1, h2, h3
+	{
+		color: white;
+		a
+		{
+			color: white;
+		}
+	}
+	h1
+	{
+		.text-center;
+		text-shadow: 0px 0px 10px black;
+		border-radius: 10px;
+	}
+	img
+	{
+		.media-object;
+	}
+	h3
+	{
+		.media-heading;
+		font-family: inherit;
+	}
+	p
+	{
+		color: white;
+	}
+	article
+	{
+		/*box-shadow: 3px 3px 20px black;*/
+		border-radius: 10px 10px 10px 10px;
+		border: 3px solid black;
+		padding: 10px 0px 10px 10px;
+		margin-bottom: 20px;
+	}
+}
+
+#accueil_jeunesse
+{
+	h1, h2
+	{
+		text-shadow: 0px 0px 10px black;
+		font-weight: 900;
+		font-family: "jeunesse";
+	}
+	h1
+	{
+		animation:anim_titre_accueil_jeunesse 10s linear infinite;
+		-webkit-animation:anim_titre_accueil_jeunesse 10s linear infinite;
+	}
+	border-right: 1px solid white;
+}
+
+#accueil_bd
+{
+	h1, h2
+	{
+		font-family: "bd";
+	}
+	h1
+	{
+		animation:anim_titre_accueil_bd 10s linear infinite;
+		-webkit-animation:anim_titre_accueil_bd 10s linear infinite;
+	}
+}
+
+@keyframes anim_titre_accueil_bd
+{
+	0%   {background: red;		}
+	25%  {background: yellow;	}
+	50%  {background: blue;		}
+	75%  {background: #c3d021;	}
+	100% {background: red;		}
+}
+
+@-webkit-keyframes anim_titre_accueil_bd
+{
+	0%   {background: red;		}
+	25%  {background: yellow;	}
+	50%  {background: blue;		}
+	75%  {background: #c3d021;	}
+	100% {background: red;		}
+}
+
+@keyframes anim_titre_accueil_jeunesse
+{
+	0%   {background: #c3d021;	}
+	25%  {background: red;		}
+	50%  {background: yellow;	}
+	75%  {background: blue;		}
+	100% {background: #c3d021;	}
+}
+
+@-webkit-keyframes anim_titre_accueil_jeunesse
+{
+	0%   {background: #c3d021;	}
+	25%  {background: red;		}
+	50%  {background: yellow;	}
+	75%  {background: blue;		}
+	100% {background: #c3d021;	}
+}

@@ -1,0 +1,49 @@
+header
+{
+	.page-header;
+	img
+	{
+		.img-responsive;
+		.transition-transform(1.5s);
+	}
+	img:hover
+	{
+		.rotate(1440deg);
+	}
+	a[title="Dans ma librairie"]
+	{
+		font-family: "bistecca", @font-family-base;
+		font-size: 3em;
+		color: #F0F0F0;
+		text-shadow: 3px 3px 20px white;
+		&:link
+		{
+			text-decoration: none;
+		}
+		&:focus
+		{
+			outline: 0;
+		}
+		&:hover
+		{
+			color: #F0F0F0;
+		}
+	}
+
+	> div
+	{
+		.make-row;
+		div:first-of-type
+		{
+			.make-md-column(3);
+		}
+		div:last-of-type
+		{
+			.make-md-column(9);
+		}
+	}
+	h1
+	{
+		.text-center;
+	}
+}
