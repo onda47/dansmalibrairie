@@ -100,6 +100,19 @@ class BlogController extends Controller
 		return array('liste_categorie_produit' => $liste_categorie_produit, 'categorie' => $categorie);
 	}
 
+    /**
+     * @Template
+     */
+    public function footerAction($categorie)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $liste_categorie_produit = $em->
+            getRepository('DmlBlogBundle:CategorieProduit')
+            ->findCategories();
+
+        return array('categorie' => $categorie);
+    }
+
 	public function librairieAction()
 	{
 		return $this->render('DmlBlogBundle:Blog:librairie.html.twig');
