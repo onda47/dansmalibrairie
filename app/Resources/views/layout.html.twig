@@ -30,13 +30,6 @@
     <div class="container">
         {% include 'header.html.twig' %}
 
-        {% if categorie is defined %}
-            {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': categorie})) %}
-        {% else %}
-            {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': 'jeunesse'})) %}
-        {% endif %}
-
-
         {% for message in app.session.flashbag.get('info') %}
             <p class="flash_info">{{ message }}</p>
         {% endfor %}

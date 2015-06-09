@@ -1,15 +1,7 @@
-{% extends '::layout_error.html.twig' %}
+{% extends 'TwigBundle:Exception:layout.html.twig' %}
 
-{% block title %}{{ parent() }} - Page non trouvée !{% endblock %}
+{% block title %}Page non trouvée !{% endblock %}
 
 {% block body %}
-<div class="row">
-	<div class="col-md-offset-2 col-md-8">
-		<h1>Oops! La page n'existe pas.</h1>
-		<h2>Le serveur a retourné une erreur "{{ status_code }} {{ status_text	}}".</h2>
-		<p>
-			Si un lien est cassé, veuillez nous contacter à l'adresse contact@dansmalibrairie.fr.
-		</p>
-	</div>
-</div>
+    <p>Il semblerait que la page à laquelle vous voulez accède n'existe pas ou plus.</p>
 {% endblock %}

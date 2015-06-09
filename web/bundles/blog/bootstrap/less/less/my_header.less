@@ -14,7 +14,7 @@ header
 	{
 		font-family: "bistecca", @font-family-base;
 		font-size: 3em;
-		color: #F0F0F0;
+		color: black;
 		text-shadow: 3px 3px 20px white;
 		&:link
 		{
@@ -26,18 +26,18 @@ header
 		}
 		&:hover
 		{
-			color: #F0F0F0;
+			color: black;
 		}
 	}
 
 	> div
 	{
 		.make-row;
-		div:first-of-type
+		div:first-child
 		{
 			.make-md-column(3);
 		}
-		div:last-of-type
+		.titre_nav
 		{
 			.make-md-column(9);
 		}

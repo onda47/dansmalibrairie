@@ -5,9 +5,14 @@
 	        	<img src="{{ asset('bundles/blog/img/dml_logo.png') }}" alt='Dans ma librairie' id="logo"/>
 	        </a>
 	    </div>
-	    <div>
+	    <div class="titre_nav">
 	        <h1><a href="{{ path('dmlblog_homepage') }}" title="Dans ma librairie">Dans ma librairie</a></h1>
-	    </div>
-        {% include '::follow.html.twig' %}
+            {% include '::follow.html.twig' %}
+            {% if categorie is defined %}
+                {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': categorie})) %}
+            {% else %}
+                {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': 'jeunesse'})) %}
+            {% endif %}
+        </div>
 	</div>
 </header>
