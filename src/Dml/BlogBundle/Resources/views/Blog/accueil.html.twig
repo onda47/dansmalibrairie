@@ -22,7 +22,6 @@ onload="$(document).ready(function() { $('#myModal').modal('show'); });"
     ################################################}
     <section id="accueil_jeunesse">
         <h1>LA JEUNESSE !</h1>
-        <hr />
         {# <h2><a href="{{ path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'jeunesse'}) }}" title="COUPS DE COEUR">COUPS DE COEUR</a></h2>
 
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -100,7 +99,6 @@ onload="$(document).ready(function() { $('#myModal').modal('show'); });"
     ################################################}
     <section id="accueil_bd">
         <h1>LA BD !</h1>
-        <hr />
 
         {% if n_bd[0].slug is defined %}
             {% include 'DmlBlogBundle:Blog:accueilEncadre.html.twig' with {

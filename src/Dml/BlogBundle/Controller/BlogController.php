@@ -193,13 +193,12 @@ class BlogController extends Controller
 	 */
 	public function newsletterAction($page)
 	{
-		$nb_page = 1;
-
 		$newsletters = $this->getDoctrine()
 			->getRepository('DmlBlogBundle:Newsletter')
-			->getNewsletters($nb_page, $page);
+			->getNewsletters(1, $page);
+
 		return array(
-			'nb_page'  => ceil(count($newsletters) / $nb_page) ?: 1,
+			'nb_page'  => count($newsletters),
 			'page' => $page,
 			'newsletters' => $newsletters,
 			'categorie' => 'newsletter'

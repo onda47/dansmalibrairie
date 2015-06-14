@@ -35,9 +35,22 @@
 			<p class="text-right">
 				<small>Article écrit le {{ livre.datePublicationArticle|date('d/m/Y') }} par {{ livre.auteurArticle }}</small>
 			</p>
-				{% include '::share.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
 		</div>
 		<br />
-		{% include '::comment.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
-	</div>
+    </div>
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="row">
+            <div class="col-md-offset-2 col-md-1">
+                <a href="{{ path('dmlblog_modifier_livre', {'fonction' : fonction, 'categorie' : categorie, 'livre' : livre.id}) }}">modifier</a>
+            </div>
+            <div class="col-md-9">
+                <a href="{{ path('dmlblog_supprimer_livre', {'fonction' : fonction, 'categorie' : categorie, 'livre' : livre.id}) }}">supprimer</a>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+    		{% include '::comment.html.twig' with {'url': url('dmlblog_livre_unique', {'categorie': categorie, 'slug': livre.slug, 'fonction': fonction})} %}
+        </div>
+    </div>
 </article>

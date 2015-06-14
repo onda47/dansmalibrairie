@@ -56,6 +56,20 @@
                             {{ emission.titre }}<small> - {{ emission.dateEmission|date('d/m/Y') }}</small>
                         </a>
                     </h2>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    <a href="{{ path('dmlblog_modifier_emission', {'emission' : emission.id}) }}">modifier</a>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    <a href="{{ path('dmlblog_supprimer_emission', {'emission' : emission.id}) }}">supprimer</a>
+                                </p>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
 
                 <div class="panel-body">

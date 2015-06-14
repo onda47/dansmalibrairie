@@ -1,0 +1,30 @@
+<div class="modal fade" id="nav_{{ cat }}" tabindex="-1" role="dialog" aria-labelledby="modal_{{ cat }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal_{{ cat }}">Question</h4>
+            </div>
+            <div class="modal-body">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" width="300" src="{{ asset('bundles/blog/img/nav/question_'~cat~'.jpeg') }}" alt="Question {{ cat }}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Que voulez-vous visiter ?</h4>
+                        <div class="btn-group-vertical" role="group" aria-label="nav_fonction">
+                            <a class="btn btn-info" href="{{ path('dmlblog_livre', {'categorie' : cat, 'fonction' : 'nouveaute'}) }}">Les nouveautes</a>
+                            <a class="btn btn-info" href="{{ path('dmlblog_livre', {'categorie' : cat, 'fonction' : 'coup-de-coeur'}) }}">Les coups de cœurs</a>
+                            <a class="btn btn-info" href="{{ path('dmlblog_evenement', {'categorie' : cat}) }}">Les événements</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

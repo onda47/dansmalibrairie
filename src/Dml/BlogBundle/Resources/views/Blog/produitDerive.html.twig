@@ -30,6 +30,14 @@
                             {% endif %}
                             <p class="prix">{{ produit.prix }} <span>€</span></p>
                             <p class="statut">{{ produit.statut }}</p>
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <p class="text-left">
+                                    <a href="{{ path('dmlblog_modifier_produit', {'produit': produit.id}) }}">modifier</a>
+                                </p>
+                                <p class="text-right">
+                                    <a href="{{ path('dmlblog_supprimer_produit', {'produit': produit.id}) }}">supprimer</a>
+                                </p>
+                            {% endif %}
                         </figcation>
                     </figure>
                 </article>

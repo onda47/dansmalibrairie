@@ -29,11 +29,11 @@
 
     // Disabled state sets text to gray and nukes hover/tab effects
     &.disabled > a {
-      color: @nav-disabled-link-color;
+      color: white;
 
       &:hover,
       &:focus {
-        color: @nav-disabled-link-hover-color;
+        color: white;
         text-decoration: none;
         background-color: transparent;
         cursor: @cursor-disabled;
@@ -96,7 +96,7 @@
       &,
       &:hover,
       &:focus {
-        color: @nav-tabs-active-link-hover-color;
+        color: white;
         background-color: @nav-tabs-active-link-hover-bg;
         border: 1px solid @nav-tabs-active-link-hover-border-color;
         border-bottom-color: transparent;
@@ -116,11 +116,13 @@
 // -------------------------
 .nav-pills {
   > li {
+    background-color: #571E01;
     float: left;
 
     // Links rendered as pills
     > a {
       border-radius: @nav-pills-border-radius;
+      color: white;
     }
     + li {
       margin-left: 2px;
@@ -131,7 +133,7 @@
       &,
       &:hover,
       &:focus {
-        color: @nav-pills-active-link-hover-color;
+        color: white;
         background-color: @nav-pills-active-link-hover-bg;
       }
     }

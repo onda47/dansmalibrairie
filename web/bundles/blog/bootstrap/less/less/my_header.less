@@ -1,6 +1,5 @@
 header
 {
-	.page-header;
 	img
 	{
 		.img-responsive;
@@ -10,12 +9,16 @@ header
 	{
 		.rotate(1440deg);
 	}
+    h1 {
+        margin-top: 0px;
+        padding: 0;
+    }
 	a[title="Dans ma librairie"]
 	{
 		font-family: "bistecca", @font-family-base;
 		font-size: 3em;
-		color: black;
-		text-shadow: 3px 3px 20px white;
+		color: #571E01;
+		text-shadow: 3px 3px 20px #571E01;
 		&:link
 		{
 			text-decoration: none;
@@ -26,7 +29,7 @@ header
 		}
 		&:hover
 		{
-			color: black;
+			color: #571E01;
 		}
 	}
 
@@ -35,6 +38,7 @@ header
 		.make-row;
 		div:first-child
 		{
+            .text-center;
 			.make-md-column(3);
 		}
 		.titre_nav

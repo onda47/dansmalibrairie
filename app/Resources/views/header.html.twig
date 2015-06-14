@@ -7,12 +7,20 @@
 	    </div>
 	    <div class="titre_nav">
 	        <h1><a href="{{ path('dmlblog_homepage') }}" title="Dans ma librairie">Dans ma librairie</a></h1>
-            {% include '::follow.html.twig' %}
             {% if categorie is defined %}
                 {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': categorie})) %}
             {% else %}
                 {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': 'jeunesse'})) %}
             {% endif %}
         </div>
-	</div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-10 col-md-2">
+            {% include '::follow.html.twig' %}
+        </div>
+    </div>
 </header>
+
+{% include 'DmlBlogBundle:Blog:_modal_categorie.html.twig' with {'cat' : "jeunesse"} %}
+{% include 'DmlBlogBundle:Blog:_modal_categorie.html.twig' with {'cat' : "bd"} %}
+{% include 'DmlBlogBundle:Blog:_modal_categorie.html.twig' with {'cat' : "science-fiction"} %}

@@ -9,37 +9,14 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="{{ path('dmlblog_homepage') }}"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+            <li {% if (app.request.attributes.get('_route') == 'dmlblog_homepage') %}class="active"{% endif %}><a href="{{ path('dmlblog_homepage') }}"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
             <li><a href="{{ path('dmlblog_librairie') }}">La librairie</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nos rayons <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jeunesse <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'jeunesse' }) }}">Les nouveautés</a></li>
-                            <li><a href="{{ path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'jeunesse'}) }}">Les coups de coeur</a></li>
-                            <li><a href="{{ path('dmlblog_evenement', {'categorie': 'jeunesse'}) }}">Les évènements</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">BD<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'bd'}) }}">Les nouveautés</a></li>
-                            <li><a href="{{ path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'bd'}) }}">Les coups de coeur</a></li>
-                            <li><a href="{{ path('dmlblog_evenement', {'categorie': 'bd'}) }}">Les évènements</a></li>
-                            <li><a href="https://ssl.canalbd.net/dans-ma-librairie_suivident" target="_blank">Suivi de série</a></li>
-                            <li><a href="http://www.canalbd.net/dans-ma-librairie" target="_blank">Dans ma librairie sur CanalBD</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Science fiction<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ path('dmlblog_livre', {'fonction': 'nouveaute', 'categorie': 'science-fiction'}) }}">Les nouveautés</a></li>
-                            <li><a href="{{ path('dmlblog_livre', {'fonction': 'coup-de-coeur', 'categorie': 'science-fiction'}) }}">Les coups de coeur</a></li>
-                            <li><a href="{{ path('dmlblog_evenement', {'categorie': 'science-fiction'}) }}">Les évènements</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#" data-toggle="modal" data-target="#nav_jeunesse">Jeunesse</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#nav_bd">BD</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#nav_science-fiction">Science fiction</a></li>
                 </ul>
             </li>
             
