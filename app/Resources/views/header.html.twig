@@ -12,11 +12,9 @@
                     {% include '::follow.html.twig' %}
                 </div>
             </div>
-            {% if categorie is defined %}
-                {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': categorie})) %}
-            {% else %}
-                {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': 'jeunesse'})) %}
-            {% endif %}
+            {% set categorie = categorie is defined ? categorie : 'jeunesse' %}
+            {% set nav = nav is defined ? nav : null %}
+            {% render(controller('DmlBlogBundle:Blog:nav', {'categorie': categorie, 'page_nav': nav})) %}
         </div>
     </div>
 </header>

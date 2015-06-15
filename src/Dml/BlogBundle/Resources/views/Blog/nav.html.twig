@@ -9,9 +9,9 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-            <li {% if (app.request.attributes.get('_route') == 'dmlblog_homepage') %}class="active"{% endif %}><a href="{{ path('dmlblog_homepage') }}"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-            <li><a href="{{ path('dmlblog_librairie') }}">La librairie</a></li>
-            <li class="dropdown">
+            <li {% if page_nav == "accueil" %}class="active"{% endif %}><a href="{{ path('dmlblog_homepage') }}"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+            <li {% if page_nav == "librairie" %}class="active"{% endif %}><a href="{{ path('dmlblog_librairie') }}">La librairie</a></li>
+            <li class="dropdown {% if page_nav == "livre" %}active{% endif %}">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nos rayons <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#" data-toggle="modal" data-target="#nav_jeunesse">Jeunesse</a></li>
@@ -20,8 +20,8 @@
                 </ul>
             </li>
             
-            <li><a href="{{ path('dmlblog_newsletter') }}">Newsletter</a></li>
-            <li class="dropdown">
+            <li {% if page_nav == "newsletter" %}class="active"{% endif %}><a href="{{ path('dmlblog_newsletter') }}">Newsletter</a></li>
+            <li class="dropdown {% if page_nav == "produits_derives" %}active{% endif %}">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dérivés <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     {% for categorie_produit in liste_categorie_produit %}
@@ -29,8 +29,8 @@
                     {% endfor %}
                 </ul>
             </li>
-            <li><a href="{{ path('dmlblog_emission') }}">Podcasts</a></li>
-            <li><a href="{{ path('dmlblog_gallerie') }}">Gallerie</a></li>
+            <li {% if page_nav == "emission" %}class="active"{% endif %}><a href="{{ path('dmlblog_emission') }}">Podcasts</a></li>
+            <li {% if page_nav == "gallerie" %}class="active"{% endif %}><a href="{{ path('dmlblog_gallerie') }}">Gallerie</a></li>
         </ul>
     </div>
 </nav>

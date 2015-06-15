@@ -83,21 +83,22 @@ class BlogController extends Controller
 			'cdc_jeunesse' => $cdc_jeunesse,
 			'evenement_jeunesse' => $evenement_jeunesse,
 			'evenement_bd' => $evenement_bd,
-			'information' => $information
+			'information' => $information,
+            'nav' => "accueil"
 		);
 	}
 
 	/**
 	 * @Template
 	 */
-	public function navAction($categorie)
+	public function navAction($categorie, $page_nav)
 	{
 		$em = $this->getDoctrine()->getManager();
 		$liste_categorie_produit = $em->
 			getRepository('DmlBlogBundle:CategorieProduit')
 			->findCategories();
 
-		return array('liste_categorie_produit' => $liste_categorie_produit, 'categorie' => $categorie);
+		return array('liste_categorie_produit' => $liste_categorie_produit, 'categorie' => $categorie, 'page_nav' => $page_nav);
 	}
 
     /**
@@ -113,9 +114,12 @@ class BlogController extends Controller
         return array('categorie' => $categorie);
     }
 
+    /**
+     * @Template()
+     */
 	public function librairieAction()
 	{
-		return $this->render('DmlBlogBundle:Blog:librairie.html.twig');
+		return array('nav' => "librairie");
 	}
 
 	/**
@@ -123,7 +127,7 @@ class BlogController extends Controller
 	 */
 	public function librairieArticlePresseAction($titre, $image)
 	{
-	    return array('image' => $image);
+	    return array('image' => $image, 'nav' => 'librairie');
 	}
 
 	/**
@@ -141,7 +145,8 @@ class BlogController extends Controller
 			'page' => $page,
 			'livres' => $livres,
 			'fonction' => $fonction,
-			'categorie' => $categorie
+			'categorie' => $categorie,
+            'nav' => 'livre'
 			);
 	}
 
@@ -153,7 +158,8 @@ class BlogController extends Controller
 		return array(
 			'fonction' => $fonction,
 			'categorie' => $categorie,
-			'livre' => $livre
+			'livre' => $livre,
+            'nav' => 'livre'
 			);
 	}
 
@@ -172,7 +178,9 @@ class BlogController extends Controller
 			'nb_page' => ceil(count($liste_evenement) / $nb_par_page) ?: 1,
 			'page' => $page,
 			'liste_evenement' => $liste_evenement,
-			'categorie' => $categorie);
+			'categorie' => $categorie,
+            'nav' => 'livre'
+            );
 	}
 
 
@@ -183,7 +191,8 @@ class BlogController extends Controller
 	{
 		return array(
 			'categorie' => $categorie,
-			'evenement' => $evenement
+			'evenement' => $evenement,
+            'nav' => 'livre'
 			);
 	}
 
@@ -201,7 +210,8 @@ class BlogController extends Controller
 			'nb_page'  => count($newsletters),
 			'page' => $page,
 			'newsletters' => $newsletters,
-			'categorie' => 'newsletter'
+			'categorie' => 'newsletter',
+            'nav' => 'newsletter'
 			);
 	}
 
@@ -212,7 +222,10 @@ class BlogController extends Controller
 	{
 		$liste_emission = $this->getDoctrine()
 			->getRepository("DmlBlogBundle:Emission")->findby(array(), array('dateEmission' => 'desc'), null, null);
-	    return array('liste_emission' => $liste_emission, 'categorie' => 'emission');
+	    return array('liste_emission' => $liste_emission,
+            'categorie' => 'emission',
+            'nav' => 'emission'
+            );
 	}
 
 
@@ -221,7 +234,8 @@ class BlogController extends Controller
 	 */
 	public function emissionUniqueAction(Emission $emission)
 	{
-	    return array('emission' => $emission, 'categorie' => 'emission');
+	    return array('emission' => $emission, 'categorie' => 'emission',
+            'nav' => 'emission');
 	}
 
 	/**
@@ -234,7 +248,9 @@ class BlogController extends Controller
 
 		return array('galleries' => $images,
 			'nb_page'  => ceil(count($images) / 20) ?: 1,
-			'page' => $page);
+			'page' => $page,
+            'nav' => 'gallerie'
+            );
 	}
 
 	/**
@@ -250,7 +266,8 @@ class BlogController extends Controller
             ->find(1);
 		return  array('liste_document' => $liste_document,
             'categorie' => 'espace_professionnel', 
-            'message_pro' => $message_pro->getText());
+            'message_pro' => $message_pro->getText(),
+            'nav' => 'espace_pro');
 	}
 
 	/**
@@ -319,6 +336,7 @@ class BlogController extends Controller
 		return array(
 			'categorieProduit' => $categorieProduit,
 			'liste_sous_categorie' => $listeSousCategorie,
-			'categorie' => 'produits_derives');
+			'categorie' => 'produits_derives',
+            'nav' => 'produits_derives');
 	}
 }
