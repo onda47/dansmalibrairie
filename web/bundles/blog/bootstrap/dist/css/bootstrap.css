@@ -1,22 +1,22 @@
 @font-face {
   font-family: "bistecca";
-  src: url("http://dansmalibrairie/web/bundles/blog/bootstrap/my_fonts/bistecca.ttf") format('truetype');
+  src: url("http://dansmalibrairie.fr/web/bundles/blog/bootstrap/my_fonts/bistecca.ttf") format('truetype');
 }
 @font-face {
   font-family: "bd";
-  src: url("http://dansmalibrairie/web/bundles/blog/bootstrap/my_fonts/SF Slapstick Comic Bold Oblique.ttf") format('truetype');
+  src: url("http://dansmalibrairie.fr/web/bundles/blog/bootstrap/my_fonts/SF Slapstick Comic Bold Oblique.ttf") format('truetype');
 }
 @font-face {
   font-family: "jeunesse";
-  src: url("http://dansmalibrairie/web/bundles/blog/bootstrap/my_fonts/jeunesse.ttf") format('truetype');
+  src: url("http://dansmalibrairie.fr/web/bundles/blog/bootstrap/my_fonts/jeunesse.ttf") format('truetype');
 }
 @font-face {
   font-family: "kid_from_hell";
-  src: url("http://dansmalibrairie/web/bundles/blog/bootstrap/my_fonts/kid_from_hell.ttf") format('truetype');
+  src: url("http://dansmalibrairie.fr/web/bundles/blog/bootstrap/my_fonts/kid_from_hell.ttf") format('truetype');
 }
 @font-face {
   font-family: "funny_kid";
-  src: url("http://dansmalibrairie/web/bundles/blog/bootstrap/my_fonts/funny_kid.ttf") format('truetype');
+  src: url("http://dansmalibrairie.fr/web/bundles/blog/bootstrap/my_fonts/funny_kid.ttf") format('truetype');
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -275,8 +275,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('http://dansmalibrairie/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.eot');
-  src: url('http://dansmalibrairie/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('http://dansmalibrairie/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('http://dansmalibrairie/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.woff') format('woff'), url('http://dansmalibrairie/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('http://dansmalibrairie/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('http://dansmalibrairie.fr/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.eot');
+  src: url('http://dansmalibrairie.fr/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('http://dansmalibrairie.fr/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('http://dansmalibrairie.fr/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.woff') format('woff'), url('http://dansmalibrairie.fr/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('http://dansmalibrairie.fr/web/bundles/blog/bootstrap/less/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
